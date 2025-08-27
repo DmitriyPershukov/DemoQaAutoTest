@@ -1,4 +1,6 @@
-﻿namespace task3.framework.config.config_data_models
+﻿using task3.framework.config_utils;
+
+namespace task3.test.configs.config_data_models
 {
     internal class Config : IConfig
     {

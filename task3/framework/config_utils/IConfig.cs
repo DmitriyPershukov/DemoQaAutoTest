@@ -1,4 +1,4 @@
-﻿namespace task3.framework.config.config_data_models
+﻿namespace task3.framework.config_utils
 {
     internal interface IConfig
     {
