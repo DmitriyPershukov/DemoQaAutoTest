@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using task3.framework.config.config_data_models;
 
-namespace task3.framework.config.config_utils
+namespace task3.framework.config_utils
 {
     internal class ConfigManager
     {
