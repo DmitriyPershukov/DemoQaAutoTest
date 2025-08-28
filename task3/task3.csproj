@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="test\tests\" />
     <Folder Include="test\pages\" />
   </ItemGroup>
 
@@ -18,7 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="test\configs\config.json">
+    <None Update="test\config\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="test\tests\global_test_data\global_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

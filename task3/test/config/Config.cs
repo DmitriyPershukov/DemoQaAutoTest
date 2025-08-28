@@ -4,10 +4,10 @@ namespace task3.test.config
 {
     internal class Config : IConfig
     {
-        private const string ConfigFileName = "config.json";
-        public static string GetConfigFileName()
+        private const string ConfigFilePath = "test\\config\\config.json";
+        public static string GetConfigFilePath()
         {
-            return ConfigFileName;
+            return ConfigFilePath;
         }
 
         public string? Browser;

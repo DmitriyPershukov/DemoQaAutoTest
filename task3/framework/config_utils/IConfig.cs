@@ -2,6 +2,6 @@
 {
     internal interface IConfig
     {
-        abstract static string GetConfigFileName();
+        abstract static string GetConfigFilePath();
     }
 }
