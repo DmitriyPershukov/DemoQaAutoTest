@@ -1,6 +1,6 @@
 ﻿using task3.framework.config_utils;
 
-namespace task3.test.configs.config_data_models
+namespace task3.test.config
 {
     internal class Config : IConfig
     {
