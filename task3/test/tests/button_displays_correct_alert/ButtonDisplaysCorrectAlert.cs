@@ -1,22 +1,19 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using task3.framework.test;
 using task3.framework.web_driver;
-using task3.test.tests.global_test_data;
+using task3.test.pages;
 
 namespace task3.test.tests.button_displays_correct_alert
 {
     internal class ButtonDisplaysCorrectAlert : BaseTest
     {
+        MainPage mainPage;
+
         [SetUp]
         public override void Setup()
         {
             base.Setup();
+            mainPage = new MainPage("Main Page");
         }
 
         [TearDown]
@@ -26,9 +23,10 @@ namespace task3.test.tests.button_displays_correct_alert
         }
 
         [Test]
-        public void TopSellersFilteringWorksAndGamePageDataCorrectTest()
+        public void ButtonDisplaysCorrectAlertTest()
         {
-            
+            WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
+            Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
         }
     }
 }

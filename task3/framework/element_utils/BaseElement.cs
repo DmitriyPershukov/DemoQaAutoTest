@@ -6,8 +6,10 @@ namespace task3.framework.element_utils
     internal class BaseElement
     {
         private By locator;
-        public BaseElement(By locator) {
+        private string name;
+        public BaseElement(By locator, string name) {
             this.locator = locator;
+            this.name = name;
         }
         public bool IsPresent()
         {
@@ -19,7 +21,9 @@ namespace task3.framework.element_utils
             return false;
         }
 
-        private IWebElement findElement()
+        public string Name { get { return name; } }
+
+        protected IWebElement FindElement()
         {
             return WebDriverProvider.GetInstance().FindElement(locator);
         }

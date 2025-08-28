@@ -11,7 +11,7 @@ namespace task3.framework.test
 {
     abstract internal class BaseTest
     {
-        private GlobalTestData globalTestData;
+        protected GlobalTestData globalTestData;
         public virtual void Setup()
         {
             globalTestData = ConfigManager.GetConfigurationModel<GlobalTestData>();
