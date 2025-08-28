@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using task3.framework.config_utils;
+using task3.test.config;
 
 namespace task3.framework.web_driver
 {
@@ -8,13 +10,18 @@ namespace task3.framework.web_driver
     {
         public static IWebDriver GetWebDriver(string browserName)
         {
+            PageLoadStrategy pageLoadStrategy = ConfigManager.GetConfigurationModel<Config>().PageLoadStrategy;
             switch (browserName)
             {
                 case "Chrome":
-                    return new ChromeDriver();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.PageLoadStrategy = pageLoadStrategy;
+                    return new ChromeDriver(chromeOptions);
 
                 case "Firefox":
-                    return new FirefoxDriver();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.PageLoadStrategy = pageLoadStrategy;
+                    return new FirefoxDriver(firefoxOptions);
 
                 default:
                     throw new ArgumentException(

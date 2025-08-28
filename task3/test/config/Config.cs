@@ -1,4 +1,5 @@
-﻿using task3.framework.config_utils;
+﻿using OpenQA.Selenium;
+using task3.framework.config_utils;
 
 namespace task3.test.config
 {
@@ -11,5 +12,6 @@ namespace task3.test.config
         }
 
         public string? Browser;
+        public PageLoadStrategy PageLoadStrategy;
     }
 }
