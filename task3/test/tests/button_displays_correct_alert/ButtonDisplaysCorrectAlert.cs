@@ -5,7 +5,7 @@ using task3.test.pages;
 
 namespace task3.test.tests.button_displays_correct_alert
 {
-    internal class ButtonDisplaysCorrectAlert : BaseTest
+    public class ButtonDisplaysCorrectAlert : BaseTest
     {
         MainPage mainPage;
 

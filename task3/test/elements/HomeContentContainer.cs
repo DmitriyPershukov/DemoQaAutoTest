@@ -8,7 +8,7 @@ using task3.framework.element_utils;
 
 namespace task3.test.elements
 {
-    internal class HomeContentContainer : BaseElement
+    public class HomeContentContainer : BaseElement
     {
         public HomeContentContainer(string name) : 
             base(By.XPath("//*[contains(@class, 'home-content')]"),

@@ -3,7 +3,7 @@ using task3.framework.web_driver;
 
 namespace task3.framework.element_utils
 {
-    internal class BaseElement
+    public class BaseElement
     {
         private By locator;
         private string name;

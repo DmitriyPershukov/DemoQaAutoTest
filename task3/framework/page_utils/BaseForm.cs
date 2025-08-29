@@ -3,7 +3,7 @@ using task3.framework.element_utils;
 
 namespace task3.framework.page
 {
-    internal class BaseForm
+    public class BaseForm
     {
         private BaseElement identifyingElement;
         private string name;

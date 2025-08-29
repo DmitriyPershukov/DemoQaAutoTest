@@ -1,9 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using OpenQA.Selenium;
 using task3.framework.config_utils;
 
 namespace task3.test.config
 {
-    internal class Config : IConfig
+    public class Config : IConfig
     {
         private const string ConfigFilePath = "test\\config\\config.json";
         public static string GetConfigFilePath()
@@ -12,6 +14,8 @@ namespace task3.test.config
         }
 
         public string? Browser;
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public PageLoadStrategy PageLoadStrategy;
     }
 }

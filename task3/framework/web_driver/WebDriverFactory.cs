@@ -6,7 +6,7 @@ using task3.test.config;
 
 namespace task3.framework.web_driver
 {
-    internal class WebDriverFactory
+    public class WebDriverFactory
     {
         public static IWebDriver GetWebDriver(string browserName)
         {

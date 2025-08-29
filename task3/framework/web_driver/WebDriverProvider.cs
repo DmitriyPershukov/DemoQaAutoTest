@@ -4,7 +4,7 @@ using task3.test.config;
 
 namespace task3.framework.web_driver
 {
-    internal class WebDriverProvider
+    public class WebDriverProvider
     {
         private static IWebDriver? instance;
         private WebDriverProvider() { }

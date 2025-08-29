@@ -9,7 +9,7 @@ using task3.test.tests.global_test_data;
 
 namespace task3.framework.test
 {
-    abstract internal class BaseTest
+    abstract public class BaseTest
     {
         protected GlobalTestData globalTestData;
         public virtual void Setup()

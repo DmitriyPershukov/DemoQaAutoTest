@@ -1,6 +1,6 @@
 ﻿namespace task3.framework.config_utils
 {
-    internal interface IConfig
+    public interface IConfig
     {
         abstract static string GetConfigFilePath();
     }
