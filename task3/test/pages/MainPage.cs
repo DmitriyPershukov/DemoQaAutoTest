@@ -8,7 +8,7 @@ using task3.test.elements;
 
 namespace task3.test.pages
 {
-    internal class MainPage : BaseForm
+    public class MainPage : BaseForm
     {
         public MainPage(string name) : base(new HomeContentContainer(name + " unique element"), name) { } 
     }
