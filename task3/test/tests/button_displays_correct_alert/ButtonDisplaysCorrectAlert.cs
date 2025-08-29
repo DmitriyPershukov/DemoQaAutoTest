@@ -8,12 +8,14 @@ namespace task3.test.tests.button_displays_correct_alert
     public class ButtonDisplaysCorrectAlert : BaseTest
     {
         MainPage mainPage;
+        PlaygroundPage playgroundPage;
 
         [SetUp]
         public override void Setup()
         {
             base.Setup();
             mainPage = new MainPage("Main Page");
+            playgroundPage = new PlaygroundPage("Playground Page");
         }
 
         [TearDown]
@@ -27,6 +29,9 @@ namespace task3.test.tests.button_displays_correct_alert
         {
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
+
+            mainPage.ClickAlertsWindowsButton();
+
         }
     }
 }

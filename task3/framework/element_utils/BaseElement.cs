@@ -23,7 +23,7 @@ namespace task3.framework.element_utils
 
         public string Name { get { return name; } }
 
-        protected IWebElement FindElement()
+        protected IWebElement GetElement()
         {
             return WebDriverProvider.GetInstance().FindElement(locator);
         }
