@@ -13,11 +13,11 @@ namespace task3.test.pages
     public class MainPage : BaseForm
     {
         BaseButton alertsWindowsButton;
-        public MainPage(string name) : base(new BaseElement(By.XPath("//*[contains(@class, 'home-content')]"), 
+        public MainPage(string name) : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
             name + " unique element"), name)
         {
             alertsWindowsButton = new BaseButton(
-                By.XPath("//*[contains(@class, 'card-body')]//*[contains(text(), 'Alerts')]"),
+                By.XPath("//*[contains(text(), 'Alerts')]//ancestor::*[contains(@class, 'top-card')]"),
                 "Alerts, Frame & Windows Button");
         }
 

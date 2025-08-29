@@ -31,7 +31,12 @@ namespace task3.test.tests.button_displays_correct_alert
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
             mainPage.ClickAlertsWindowsButton();
-
+            playgroundPage.WaitDropDownMenuAnimationFinish();
+            Assert.That(playgroundPage.IsOpened(), "Page is not opened.");
+            //Assert.That(!playgroundPage.IsDropDownMenuCollapsed("Alerts, Frame & Windows"), "Alerts, Frame & Windows not opened");
+            Assert.That(!playgroundPage.IsDropDownMenuCollapsed("Alerts"), "Alerts not opened");
+            Assert.That(playgroundPage.IsOpened() && !playgroundPage.IsDropDownMenuCollapsed("Alerts, Frame & Windows"),
+                "Alerts, Frame & Windows button was clicked but Alerts, Frame & Windows page was not opened.");
         }
     }
 }
