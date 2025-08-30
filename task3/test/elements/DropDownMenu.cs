@@ -6,19 +6,24 @@ using task3.framework.web_driver;
 
 namespace task3.test.elements
 {
-    internal class DropDownMenu : BaseElement
+    public class DropDownMenu : BaseElement
     {
+        private MenuElementList menuElements;
         public DropDownMenu(By locator, string name) : base(locator, name){}
 
         public DropDownMenu(string label, string name) : base(
             By.XPath($"//*[contains(text(), '{label}')]//ancestor::*[contains(@class, 'element-group')]"), 
-            name){}
+            name)
+        {
+            menuElements = new MenuElementList(
+                By.XPath($"//*[contains(text(), '{label}')]//ancestor::*[contains(@class, 'element-group')]" +
+                $"//*[contains(@class, 'element-list')]"), 
+                $"Element list of drop down menu with label {label}");
+        }
 
         public bool IsCollapsed()
         {    
-            return !GetElement().FindElement(By.XPath("//*[contains(@class, 'element-list')]"))
-                .GetAttribute("class")
-                .Contains("show");
+            return menuElements.IsCollapsed();
         }
     }
 }
