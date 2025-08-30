@@ -21,9 +21,9 @@ namespace task3.test.elements
                 $"Element list of drop down menu with label {label}");
         }
 
-        public bool IsCollapsed()
-        {    
-            return menuElements.IsCollapsed();
+        public MenuElementList GetElementList()
+        {
+            return menuElements;
         }
     }
 }

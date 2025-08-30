@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.BiDi.BrowsingContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,16 @@ namespace task3.test.elements
         public bool IsCollapsed()
         {
             return !GetElement().GetAttribute("class").Contains("show");
+        }
+
+        public void ClickElement(string label)
+        {
+            var b = GetElement().Text;
+            var a = GetElement()
+                .FindElement(By.XPath($"//*[contains(text(), '{label}')]")).Text;
+            GetElement()
+                .FindElement(By.XPath($"//*[contains(text(), '{label}')]"))
+                .Click();
         }
     }
 }

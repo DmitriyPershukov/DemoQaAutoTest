@@ -23,12 +23,18 @@ namespace task3.test.pages
 
         public bool IsDropDownMenuCollapsed(string label)
         {
-            return accordion.GetDropDownMenu(label).IsCollapsed();
+            return accordion.
+                GetDropDownMenu(label).
+                GetElementList().
+                IsCollapsed();
         }
 
-        public void WaitDropDownMenuAnimationFinish()
+        public void ClickAccordionMenuElement(string menuLabel, string menuElementLabel)
         {
-            accordion.WaitDropDownMenuAnimationFinish();
+            accordion.
+                GetDropDownMenu(menuLabel)
+                .GetElementList()
+                .ClickElement(menuElementLabel);
         }
     }
 }

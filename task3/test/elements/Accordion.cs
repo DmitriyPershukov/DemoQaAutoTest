@@ -26,15 +26,5 @@ namespace task3.test.elements
             }
             return accordionElements[label];
         }
-
-        public void WaitDropDownMenuAnimationFinish()
-        {
-            BareElement collapsingElement = new BareElement(By.XPath("//*[contains(@class, 'collapsing')]"), "");
-            WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
-            wait.Until(c =>
-            {
-                return !collapsingElement.IsPresent();
-            });
-        }
     }
 }
