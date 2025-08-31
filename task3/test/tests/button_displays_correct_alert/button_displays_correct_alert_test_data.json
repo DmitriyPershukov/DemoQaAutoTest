@@ -1,0 +1,7 @@
+{
+  "PromptBoxRandomTextLength": 8,
+  "AlertText": "You clicked a button",
+  "ConfirmBoxAlertText": "Do you confirm action?",
+  "PromptBoxAlertText": "Please enter your name",
+  "ConfirmBoxConfirmationText": "You selected Ok"
+}

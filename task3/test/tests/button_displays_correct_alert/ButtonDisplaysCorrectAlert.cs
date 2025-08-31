@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using task3.framework.browser_utils;
+using task3.framework.config_utils;
 using task3.framework.test;
 using task3.framework.testing_utils;
 using task3.framework.web_driver;
@@ -12,6 +13,7 @@ namespace task3.test.tests.button_displays_correct_alert
         MainPage mainPage;
         PlaygroundPage playgroundPage;
         AlertsForm alertsForm;
+        ButtonDisplaysCorrectAlertTestData testData;
 
         [SetUp]
         public override void Setup()
@@ -20,6 +22,7 @@ namespace task3.test.tests.button_displays_correct_alert
             mainPage = new MainPage("Main Page");
             playgroundPage = new PlaygroundPage("Playground Page");
             alertsForm = new AlertsForm("Alerts Form");
+            testData = ConfigManager.GetConfigurationModel<ButtonDisplaysCorrectAlertTestData>();
         }
 
         [TearDown]
@@ -41,31 +44,32 @@ namespace task3.test.tests.button_displays_correct_alert
                 "but Alerts form was not opened.");
 
             alertsForm.ClickAlertButton();
-            Assert.That(AlertUtils.IsAlertWithTextPresent("You clicked a button"),
+            Assert.That(AlertUtils.IsAlertWithTextPresent(testData.AlertText),
                 "'Click Button to see alert' button was clicked " +
-                "but alert with text 'You clicked a button' did not appear.");
+                $"but alert with text '{testData.AlertText}' did not appear.");
 
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(),
                 "Ok button on alert was clicked but alert is still present.");
 
             alertsForm.ClickConfirmBoxButton();
-            Assert.That(AlertUtils.IsAlertWithTextPresent("Do you confirm action?"),
+            Assert.That(AlertUtils.IsAlertWithTextPresent(testData.ConfirmBoxAlertText),
                 "'On button click, confirm box will appear' button was clicked " +
-                "but alert with text 'Do you confirm action?' did not appear.");
+                $"but alert with text '{testData.ConfirmBoxAlertText}' did not appear.");
 
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(), 
                 "Ok button in confirm box alert was clicked but alert was not closed.");
-            Assert.That(alertsForm.GetConfirmBoxConfirmationText(), Is.EqualTo("You selected Ok"),
-                "Ok button in confirm box alert was clicked but 'You selected Ok' did not appear.");
+            Assert.That(alertsForm.GetConfirmBoxConfirmationText(), Is.EqualTo(testData.ConfirmBoxConfirmationText),
+                $"Ok button in confirm box alert was clicked " +
+                $"but '{testData.ConfirmBoxConfirmationText}' did not appear.");
 
             alertsForm.ClickPromptBoxButton();
-            Assert.That(AlertUtils.IsAlertWithTextPresent("Please enter your name"),
+            Assert.That(AlertUtils.IsAlertWithTextPresent(testData.PromptBoxAlertText),
                 "'On button click, prompt box will appear' button was clicked " +
-                "but alert with text 'Do you confirm action?' did not appear.");
+                $"but alert with text '{testData.PromptBoxAlertText}' did not appear.");
 
-            var randomText = TestingUtils.GetRandomText(8);
+            var randomText = TestingUtils.GetRandomText(testData.PromptBoxRandomTextLength);
             AlertUtils.EnterText(randomText);
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(),
