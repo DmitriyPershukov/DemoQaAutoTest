@@ -39,7 +39,7 @@ namespace task3.test.tests.button_displays_correct_alert
                 "Alerts, Frame & Windows button was clicked and button Alerts was clicked in left menu " +
                 "but Alerts form was not opened.");
 
-            alertsForm.ClickAlertOnClickButton();
+            alertsForm.ClickAlertButton();
             Assert.That(AlertUtils.IsAlertWithTextPresent("You clicked a button"),
                 "'Click Button to see alert' button was clicked " +
                 "but alert with text 'You clicked a button' did not appear.");

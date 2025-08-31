@@ -11,17 +11,25 @@ namespace task3.test.pages
 {
     internal class AlertsForm : BaseForm
     {
-        BaseButton alertOnClickButton;
+        BaseButton alertButton;
+        BaseButton confirmBoxButton;
         public AlertsForm(string name) : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
             name)
         {
-            alertOnClickButton = new BaseButton(By.Id("alertButton"), "'Click Button to see alert' button");
+            alertButton = new BaseButton(By.Id("alertButton"), "'Click Button to see alert' button");
+            confirmBoxButton = new BaseButton(By.Id("confirmButton"), 
+                "'On button click, confirm box will appear' button");
         }
 
-        public void ClickAlertOnClickButton()
+        public void ClickAlertButton()
         {
-            alertOnClickButton.Click();
+            alertButton.Click();
+        }
+
+        public void ClickConfirmBoxButton()
+        {
+            confirmBoxButton.Click();
         }
     }
 }
