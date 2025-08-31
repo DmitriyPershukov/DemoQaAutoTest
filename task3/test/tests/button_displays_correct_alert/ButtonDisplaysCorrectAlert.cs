@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using task3.framework.browser_utils;
 using task3.framework.test;
 using task3.framework.web_driver;
 using task3.test.pages;
@@ -37,6 +38,11 @@ namespace task3.test.tests.button_displays_correct_alert
             Assert.That(playgroundPage.IsOpened() && alertsForm.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button Alerts was clicked in left menu " +
                 "but Alerts form was not opened.");
+
+            alertsForm.ClickAlertOnClickButton();
+            Assert.That(AlertUtils.IsAlertWithTextPresent("You clicked a button"),
+                "'Click Button to see alert' button was clicked " +
+                "but alert with text 'You clicked a button' did not appear.");
         }
     }
 }
