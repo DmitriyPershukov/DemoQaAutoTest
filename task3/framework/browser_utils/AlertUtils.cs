@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,42 @@ namespace task3.framework.browser_utils
     {
         public static bool IsAlertWithTextPresent(string text)
         {
-            return WebDriverProvider
+            if (IsAlertPresent())
+            {
+                return WebDriverProvider
                     .GetInstance()
                     .SwitchTo()
                     .Alert()
                     .Text
                     .Equals(text);
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        public static void ClickOk()
+        {
+            WebDriverProvider
+                    .GetInstance()
+                    .SwitchTo()
+                    .Alert()
+                    .Accept();
+        }
+
+        public static bool IsAlertPresent()
+        {
+            try
+            {
+                WebDriverProvider.GetInstance().SwitchTo().Alert();
+                return true;
+            }
+            catch (NoAlertPresentException Ex)
+            {
+                return false;
+            }
         }
     }
 }
