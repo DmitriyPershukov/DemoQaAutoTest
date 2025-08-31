@@ -34,7 +34,8 @@ namespace task3.test.pages
             accordion.
                 GetDropDownMenu(menuLabel)
                 .GetElementList()
-                .ClickElement(menuElementLabel);
+                .GetElement(menuElementLabel)
+                .Click();
         }
     }
 }
