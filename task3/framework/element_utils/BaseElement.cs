@@ -27,5 +27,10 @@ namespace task3.framework.element_utils
         {
             return WebDriverProvider.GetInstance().FindElement(locator);
         }
+
+        public string GetText()
+        {
+            return GetElement().Text;
+        }
     }
 }

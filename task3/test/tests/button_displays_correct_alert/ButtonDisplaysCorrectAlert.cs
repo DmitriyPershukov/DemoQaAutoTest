@@ -52,6 +52,9 @@ namespace task3.test.tests.button_displays_correct_alert
             Assert.That(AlertUtils.IsAlertWithTextPresent("Do you confirm action?"),
                 "'On button click, confirm box will appear' button was clicked " +
                 "but alert with text 'Do you confirm action?' did not appear.");
+
+            AlertUtils.ClickOk();
+            Assert.That(!AlertUtils.IsAlertPresent(), "");
         }
     }
 }

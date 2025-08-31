@@ -31,5 +31,23 @@ namespace task3.test.pages
         {
             confirmBoxButton.Click();
         }
+
+        public bool IsConfirmBoxOkMessageDisplayed()
+        {
+            BareElement confirmationMessage = new BareElement(By.Id("confirmResult"), 
+                                                                    "Confirm box pressed ok message");
+            if (!confirmationMessage.IsPresent())
+            {
+                return false;
+            }
+            if(confirmationMessage.GetText().Equals("You selected Ok"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
