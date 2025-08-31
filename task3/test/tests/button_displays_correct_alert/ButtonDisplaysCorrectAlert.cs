@@ -54,7 +54,10 @@ namespace task3.test.tests.button_displays_correct_alert
                 "but alert with text 'Do you confirm action?' did not appear.");
 
             AlertUtils.ClickOk();
-            Assert.That(!AlertUtils.IsAlertPresent(), "");
+            Assert.That(!AlertUtils.IsAlertPresent(), 
+                "Ok button in confirm box alert was clicked but alert was not closed.");
+            Assert.That(alertsForm.IsConfirmBoxOkMessageDisplayed(),
+                "Ok button in confirm box alert was clicked but 'You selected Ok' did not appear.");
         }
     }
 }
