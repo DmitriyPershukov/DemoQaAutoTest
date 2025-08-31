@@ -13,6 +13,7 @@ namespace task3.test.pages
     {
         BaseButton alertButton;
         BaseButton confirmBoxButton;
+        BaseButton promptBoxButton;
         public AlertsForm(string name) : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
             name)
@@ -20,6 +21,8 @@ namespace task3.test.pages
             alertButton = new BaseButton(By.Id("alertButton"), "'Click Button to see alert' button");
             confirmBoxButton = new BaseButton(By.Id("confirmButton"), 
                 "'On button click, confirm box will appear' button");
+            promptBoxButton = new BaseButton(By.Id("promtButton"),
+                "'On button click, prompt box will appear' button");
         }
 
         public void ClickAlertButton()
@@ -30,6 +33,11 @@ namespace task3.test.pages
         public void ClickConfirmBoxButton()
         {
             confirmBoxButton.Click();
+        }
+
+        public void ClickPromptBoxButton()
+        {
+            promptBoxButton.Click();
         }
 
         public bool IsConfirmBoxOkMessageDisplayed()
