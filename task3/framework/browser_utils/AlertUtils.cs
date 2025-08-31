@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task3.framework.browser_utils
 {
-    public class BrowserUtils
+    public class AlertUtils
     { 
     }
 }
