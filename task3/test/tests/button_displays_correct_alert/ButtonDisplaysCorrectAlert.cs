@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using task3.framework.browser_utils;
 using task3.framework.test;
+using task3.framework.testing_utils;
 using task3.framework.web_driver;
 using task3.test.pages;
 
@@ -56,13 +57,21 @@ namespace task3.test.tests.button_displays_correct_alert
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(), 
                 "Ok button in confirm box alert was clicked but alert was not closed.");
-            Assert.That(alertsForm.IsConfirmBoxOkMessageDisplayed(),
+            Assert.That(alertsForm.GetConfirmBoxConfirmationText(), Is.EqualTo("You selected Ok"),
                 "Ok button in confirm box alert was clicked but 'You selected Ok' did not appear.");
 
             alertsForm.ClickPromptBoxButton();
             Assert.That(AlertUtils.IsAlertWithTextPresent("Please enter your name"),
                 "'On button click, prompt box will appear' button was clicked " +
                 "but alert with text 'Do you confirm action?' did not appear.");
+
+            var randomText = TestingUtils.GetRandomText(8);
+            AlertUtils.EnterText(randomText);
+            AlertUtils.ClickOk();
+            Assert.That(!AlertUtils.IsAlertPresent(),
+                "Ok button in prompt box alert was clicked but alert was not closed.");
+            Assert.That(alertsForm.GetPromptBoxConfirmationText(), Is.EqualTo(randomText),
+                $"Ok button in prompt box alert was clicked but text '{randomText}' did not appear.");
         }
     }
 }

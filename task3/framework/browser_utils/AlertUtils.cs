@@ -49,5 +49,14 @@ namespace task3.framework.browser_utils
                 return false;
             }
         }
+
+        public static void EnterText(string text)
+        {
+            WebDriverProvider
+                    .GetInstance()
+                    .SwitchTo()
+                    .Alert()
+                    .SendKeys(text);
+        }
     }
 }

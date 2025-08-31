@@ -40,21 +40,31 @@ namespace task3.test.pages
             promptBoxButton.Click();
         }
 
-        public bool IsConfirmBoxOkMessageDisplayed()
+        public string GetConfirmBoxConfirmationText()
         {
-            BareElement confirmationMessage = new BareElement(By.Id("confirmResult"), 
+            BareElement confirmationMessage = new BareElement(By.Id("confirmResult"),
                                                                     "Confirm box pressed ok message");
-            if (!confirmationMessage.IsPresent())
+            if (confirmationMessage.IsPresent())
             {
-                return false;
-            }
-            if(confirmationMessage.GetText().Equals("You selected Ok"))
-            {
-                return true;
+                return confirmationMessage.GetText();
             }
             else
             {
-                return false;
+                throw new Exception("Confirmation text element is missing.");
+            }
+        }
+
+        public string GetPromptBoxConfirmationText()
+        {
+            BareElement confirmationMessage = new BareElement(By.Id("promptResult"),
+                                                                    "Prompt box input display text");
+            if (confirmationMessage.IsPresent())
+            {
+                return confirmationMessage.GetText().Substring(12);
+            }
+            else
+            {
+                throw new Exception("Confirmation text element is missing.");
             }
         }
     }
