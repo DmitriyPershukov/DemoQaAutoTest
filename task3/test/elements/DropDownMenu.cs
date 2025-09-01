@@ -15,7 +15,7 @@ namespace task3.test.elements
             By.XPath($"//*[contains(text(), '{label}')]//ancestor::*[contains(@class, 'element-group')]"), 
             name)
         {
-            menuElements = new MenuElementList(label, $"Element list of drop down menu with label {label}");
+            menuElements = new MenuElementList(label, $"Element list of drop down menu with label: '{label}'");
         }
 
         public MenuElementList GetElementList()

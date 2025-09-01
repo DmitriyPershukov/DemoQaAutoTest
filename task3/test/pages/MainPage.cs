@@ -18,7 +18,7 @@ namespace task3.test.pages
         {
             alertsWindowsButton = new BaseButton(
                 By.XPath("//*[contains(text(), 'Alerts')]//ancestor::*[contains(@class, 'top-card')]"),
-                "Alerts, Frame & Windows Button");
+                "Alerts, Frame & Windows");
         }
 
         public void ClickAlertsWindowsButton()

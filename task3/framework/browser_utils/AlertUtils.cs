@@ -1,9 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using NLog;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using task3.framework.testing_utils;
 using task3.framework.web_driver;
 
 namespace task3.framework.browser_utils
@@ -30,6 +32,7 @@ namespace task3.framework.browser_utils
 
         public static void ClickOk()
         {
+            LoggingManager.GetLogger().Debug("Clicking alert 'Ok' button");
             WebDriverProvider
                     .GetInstance()
                     .SwitchTo()
@@ -52,6 +55,7 @@ namespace task3.framework.browser_utils
 
         public static void EnterText(string text)
         {
+            LoggingManager.GetLogger().Debug($"Entering text '{text}' into the alert input field.");
             WebDriverProvider
                     .GetInstance()
                     .SwitchTo()

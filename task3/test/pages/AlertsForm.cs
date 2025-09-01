@@ -18,11 +18,11 @@ namespace task3.test.pages
             "AlertsForm identifying element"), 
             name)
         {
-            alertButton = new BaseButton(By.Id("alertButton"), "'Click Button to see alert' button");
+            alertButton = new BaseButton(By.Id("alertButton"), "Alert");
             confirmBoxButton = new BaseButton(By.Id("confirmButton"), 
-                "'On button click, confirm box will appear' button");
+                "Confirm box alert");
             promptBoxButton = new BaseButton(By.Id("promtButton"),
-                "'On button click, prompt box will appear' button");
+                "Prompt box alert");
         }
 
         public void ClickAlertButton()
@@ -43,7 +43,7 @@ namespace task3.test.pages
         public string GetConfirmBoxConfirmationText()
         {
             BareElement confirmationMessage = new BareElement(By.Id("confirmResult"),
-                                                                    "Confirm box pressed ok message");
+                                                                    "Confirm box alert confirmation text");
             if (confirmationMessage.IsPresent())
             {
                 return confirmationMessage.GetText();
@@ -57,7 +57,7 @@ namespace task3.test.pages
         public string GetPromptBoxConfirmationText()
         {
             BareElement confirmationMessage = new BareElement(By.Id("promptResult"),
-                                                                    "Prompt box input display text");
+                                                                    "Prompt box alert confirmation text");
             if (confirmationMessage.IsPresent())
             {
                 return confirmationMessage.GetText().Substring(12);

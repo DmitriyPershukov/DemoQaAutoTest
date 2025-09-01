@@ -5,8 +5,8 @@ namespace task3.framework.element_utils
 {
     public abstract class BaseElement
     {
-        private By locator;
-        private string name;
+        protected By locator;
+        protected string name;
         public BaseElement(By locator, string name) {
             this.locator = locator;
             this.name = name;
