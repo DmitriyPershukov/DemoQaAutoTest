@@ -14,7 +14,7 @@ namespace task3.framework.test
         protected GlobalTestData globalTestData;
         public virtual void Setup()
         {
-            globalTestData = ConfigManager.GetConfigurationModel<GlobalTestData>();
+            globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
         }
 
         public virtual void Teardown()

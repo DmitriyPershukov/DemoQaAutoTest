@@ -13,7 +13,7 @@ namespace task3.framework.web_driver
         {
             if (instance == null)
             {
-                Config? config = ConfigManager.GetConfigurationModel<Config>();
+                Config? config = ConfigManager.GetConfigurationModel();
                 instance = WebDriverFactory.GetWebDriver(config.Browser);
             }
             return instance;

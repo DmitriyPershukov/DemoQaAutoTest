@@ -22,7 +22,7 @@ namespace task3.test.tests.button_displays_correct_alert
             mainPage = new MainPage("Main Page");
             playgroundPage = new PlaygroundPage("Playground Page");
             alertsForm = new AlertsForm("Alerts Form");
-            testData = ConfigManager.GetConfigurationModel<ButtonDisplaysCorrectAlertTestData>();
+            testData = TestDataManager.GetTestDataModel<ButtonDisplaysCorrectAlertTestData>();
         }
 
         [TearDown]

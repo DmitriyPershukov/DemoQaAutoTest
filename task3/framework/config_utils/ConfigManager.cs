@@ -1,12 +1,18 @@
 ﻿using Newtonsoft.Json;
+using task3.test.config;
 
 namespace task3.framework.config_utils
 {
     public class ConfigManager
     {
-        public static T GetConfigurationModel<T>() where T : IConfig
+        private static Config config; 
+        public static Config GetConfigurationModel()
         {
-            return FileReader.ReadJsonDataFile<T>();
+            if (config == null)
+            {
+                config = FileReader.ReadJsonDataFile<Config>();
+            }
+            return config;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace task3.framework.web_driver
     {
         public static IWebDriver GetWebDriver(string browserName)
         {
-            PageLoadStrategy pageLoadStrategy = ConfigManager.GetConfigurationModel<Config>().PageLoadStrategy;
+            PageLoadStrategy pageLoadStrategy = ConfigManager.GetConfigurationModel().PageLoadStrategy;
             switch (browserName)
             {
                 case "Chrome":
