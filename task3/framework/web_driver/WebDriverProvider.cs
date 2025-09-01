@@ -15,6 +15,7 @@ namespace task3.framework.web_driver
             {
                 Config? config = ConfigManager.GetConfigurationModel();
                 instance = WebDriverFactory.GetWebDriver(config.Browser);
+                instance.Manage().Window.Maximize();
             }
             return instance;
         }

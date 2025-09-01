@@ -16,7 +16,7 @@ namespace task3.framework.element_utils
 
         public void Click()
         {
-            LoggingManager.GetLogger().Debug($"Clicking '{name}' button.");
+            LoggingManager.GetLogger().Debug($"Clicking '{Name}' button.");
             GetElement().Click();
         }
     }

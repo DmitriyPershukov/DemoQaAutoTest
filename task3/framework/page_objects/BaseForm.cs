@@ -15,6 +15,8 @@ namespace task3.framework.page
 
         public string Name { get { return name; } }
 
+        public BaseElement IdentifyingElement { get { return identifyingElement; } }
+
         public virtual bool IsOpened()
         {
             return identifyingElement.IsPresent();

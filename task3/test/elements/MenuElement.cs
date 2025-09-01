@@ -17,6 +17,6 @@ namespace task3.test.elements
         public MenuElement(string menuLabel, string label, string name) : base(By.XPath($"//*[contains(text(), '{menuLabel}')]" +
                 $"//ancestor::*[contains(@class, 'element-group')]" +
                 $"//*[contains(@class, 'element-list')]" +
-                $"//*[contains(text(),'{label}')]"), name) { }
+                $"//*[contains(text(),'{label}')]/.."), name) { }
     }
 }
