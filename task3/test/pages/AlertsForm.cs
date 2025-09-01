@@ -9,7 +9,7 @@ using task3.framework.page;
 
 namespace task3.test.pages
 {
-    internal class AlertsForm : BaseForm
+    public class AlertsForm : BaseForm
     {
         BaseButton alertButton;
         BaseButton confirmBoxButton;

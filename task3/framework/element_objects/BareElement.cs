@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace task3.framework.element_utils
 {
-    internal class BareElement : BaseElement
+    public class BareElement : BaseElement
     {
         public BareElement(By locator, string name) : base(locator, name)
         {

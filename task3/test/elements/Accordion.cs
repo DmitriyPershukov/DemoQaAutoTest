@@ -10,7 +10,7 @@ using task3.framework.web_driver;
 
 namespace task3.test.elements
 {
-    internal class Accordion : BaseElement
+    public class Accordion : BaseElement
     {
         private Dictionary<string, DropDownMenu> accordionElements;
         public Accordion(string name) : base(By.XPath("//*[contains(@class, 'accordion')]"), name)

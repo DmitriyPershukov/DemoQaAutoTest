@@ -7,7 +7,7 @@ using task3.framework.config_utils;
 
 namespace task3.test.tests.button_displays_correct_alert
 {
-    internal class ButtonDisplaysCorrectAlertTestData : IConfig
+    public class ButtonDisplaysCorrectAlertTestData : IConfig
     {
         private const string ConfigFilePath = 
             "test\\tests\\button_displays_correct_alert\\button_displays_correct_alert_test_data.json";
