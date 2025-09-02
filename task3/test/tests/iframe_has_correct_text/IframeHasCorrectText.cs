@@ -13,7 +13,9 @@ namespace task3.test.tests.iframe_has_correct_text
     {
         MainPage mainPage;
         PlaygroundPage playgroundPage;
+        NestedFramesForm nestedFramesForm;
         FramesForm framesForm;
+        IframeHasCorrectTextTestData testData;
 
         [SetUp]
         public override void Setup()
@@ -21,7 +23,9 @@ namespace task3.test.tests.iframe_has_correct_text
             base.Setup();
             mainPage = new MainPage("Main Page");
             playgroundPage = new PlaygroundPage("Playground Page");
+            nestedFramesForm = new NestedFramesForm("Nested Frames Form");
             framesForm = new FramesForm("Frames Form");
+            testData = TestDataManager.GetTestDataModel<IframeHasCorrectTextTestData>();
         }
 
         [TearDown]
@@ -38,11 +42,12 @@ namespace task3.test.tests.iframe_has_correct_text
 
             mainPage.ClickAlertsWindowsButton();
             playgroundPage.ClickAccordionMenuElement("Alerts", "Nested Frames");
-            Assert.That(playgroundPage.IsOpened() && framesForm.IsOpened(),
+            Assert.That(playgroundPage.IsOpened() && nestedFramesForm.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button Alerts was clicked in left menu " +
                 "but Frames form was not opened.");
 
-            Assert.That(framesForm.ContainsText("Parent frame"), "No it doesnt");
+            Assert.That(nestedFramesForm.AreStringsPresent(testData.NestedFramesRequiredText), 
+                "Nested frames form should contain ");
         }
     }
 }

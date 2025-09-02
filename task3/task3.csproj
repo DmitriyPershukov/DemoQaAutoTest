@@ -38,6 +38,9 @@
     <None Update="test\tests\global_test_data\global_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="test\tests\iframe_has_correct_text\iframe_has_correct_text_test_data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

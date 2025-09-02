@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using task3.framework.config_utils;
+
+namespace task3.test.tests.iframe_has_correct_text
+{
+    public class IframeHasCorrectTextTestData : IConfig
+    {
+        private const string ConfigFilePath =
+            "test\\tests\\iframe_has_correct_text\\iframe_has_correct_text_test_data.json";
+        public static string GetConfigFilePath()
+        {
+            return ConfigFilePath;
+        }
+
+        public string[]? NestedFramesRequiredText;
+    }
+}
