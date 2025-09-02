@@ -12,7 +12,7 @@ namespace task3.test.pages
     internal class WebTablesForm : BaseForm
     {
         public WebTablesForm(string name) : base(
-            new BareElement(By.XPath("//*[contains(@class, 'rt - table')]"), "WebTables Page identifying element"), 
+            new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name){}
     }
 }

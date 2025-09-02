@@ -19,10 +19,10 @@ namespace task3.test.pages
             name + " unique element"), name)
         {
             alertsWindowsButton = new BaseButton(
-                By.XPath("//*[contains(text(), 'Alerts')]//ancestor::*[contains(@class, 'top-card')]"),
+                By.XPath("//*[contains(@class, 'top-card')]//*[contains(text(), 'Alerts')]"),
                 "Alerts, Frame & Windows");
             elementsButton = new BaseButton(
-                By.XPath("//*[contains(text(), 'Elements')]//ancestor::*[contains(@class, 'top-card')]"),
+                By.XPath("//*[contains(@class, 'top-card')]//*[contains(text(), 'Elements')]"),
                 "Alerts, Frame & Windows");
         }
 
