@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using task3.framework.web_driver;
 
 namespace task3.framework.element_utils
@@ -32,6 +33,12 @@ namespace task3.framework.element_utils
         public string GetText()
         {
             return GetElement().Text;
+        }
+
+        public void WaitForElement(TimeSpan timeout)
+        {
+            WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
+            wait.Until(d => IsPresent());
         }
     }
 }
