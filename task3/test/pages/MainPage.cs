@@ -13,6 +13,7 @@ namespace task3.test.pages
     public class MainPage : BaseForm
     {
         BaseButton alertsWindowsButton;
+        BaseButton elementsButton;
 
         public MainPage(string name) : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
             name + " unique element"), name)
@@ -20,11 +21,19 @@ namespace task3.test.pages
             alertsWindowsButton = new BaseButton(
                 By.XPath("//*[contains(text(), 'Alerts')]//ancestor::*[contains(@class, 'top-card')]"),
                 "Alerts, Frame & Windows");
+            elementsButton = new BaseButton(
+                By.XPath("//*[contains(text(), 'Elements')]//ancestor::*[contains(@class, 'top-card')]"),
+                "Alerts, Frame & Windows");
         }
 
         public void ClickAlertsWindowsButton()
         {
             alertsWindowsButton.Click();
+        }
+
+        public void ClickElementsButton()
+        {
+            elementsButton.Click();
         }
     }
 }

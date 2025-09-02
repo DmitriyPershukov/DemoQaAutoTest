@@ -41,6 +41,9 @@
     <None Update="test\tests\iframe_has_correct_text\iframe_has_correct_text_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="test\tests\registration_form_add_delete\registration_form_add_delete_test_data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

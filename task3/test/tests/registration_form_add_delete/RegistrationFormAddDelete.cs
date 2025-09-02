@@ -19,6 +19,7 @@ namespace task3.test.tests.registration_form_add_delete
     {
         MainPage mainPage;
         PlaygroundPage playgroundPage;
+        WebTablesForm webTables;
         RegistrationFormAddDeleteTestData testData;
 
         [SetUp]
@@ -27,6 +28,7 @@ namespace task3.test.tests.registration_form_add_delete
             base.Setup();
             mainPage = new MainPage("Main Page");
             playgroundPage = new PlaygroundPage("Playground Page");
+            webTables = new WebTablesForm("Web Tables Page");
             testData = TestDataManager.GetTestDataModel<RegistrationFormAddDeleteTestData>();
         }
 
@@ -44,7 +46,7 @@ namespace task3.test.tests.registration_form_add_delete
 
             mainPage.ClickAlertsWindowsButton();
             playgroundPage.ClickAccordionMenuElement("Elements", "Web Tables");
-            Assert.That(playgroundPage.IsOpened() && true,
+            Assert.That(playgroundPage.IsOpened() && webTables.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Nested Frames' was clicked in left menu " +
                 "but Nested Frames form was not opened.");
         }
