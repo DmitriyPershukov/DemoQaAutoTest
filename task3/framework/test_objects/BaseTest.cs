@@ -16,11 +16,23 @@ namespace task3.framework.test
         public virtual void Setup()
         {
             globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
+            LogTestStart();
         }
 
         public virtual void Teardown()
         {
             WebDriverProvider.SetInstanceNull();
+            LogTestEnd();
+        }
+
+        protected void LogTestStart()
+        {
+            LoggingManager.GetLogger().Debug($"Starting test: {GetType().Name}");
+        }
+
+        protected void LogTestEnd()
+        {
+            LoggingManager.GetLogger().Debug($"Ended test: {GetType().Name}");
         }
     }
 }
