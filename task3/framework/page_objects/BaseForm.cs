@@ -21,5 +21,10 @@ namespace task3.framework.page
         {
             return identifyingElement.IsPresent();
         }
+
+        public void WaitToLoad(TimeSpan timeout)
+        {
+            identifyingElement.WaitForElement(timeout);
+        }
     }
 }
