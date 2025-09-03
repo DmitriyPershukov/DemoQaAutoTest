@@ -24,7 +24,7 @@ namespace task3.framework.page
 
         public void WaitToLoad(TimeSpan timeout)
         {
-            identifyingElement.WaitForElement(timeout);
+            identifyingElement.WaitUntilPresent(timeout);
         }
     }
 }
