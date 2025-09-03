@@ -31,6 +31,7 @@ namespace task3.test.tests.switching_tabs
             base.Teardown();
         }
 
+        [Test]
         public void SwitchingTabsTest()
         {
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
