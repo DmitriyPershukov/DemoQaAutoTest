@@ -9,6 +9,7 @@ using task3.framework.config_utils;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.framework.test;
+using task3.framework.testing_utils;
 using task3.framework.web_driver;
 using task3.test.pages;
 using task3.test.tests.global_test_data;
@@ -65,6 +66,7 @@ namespace task3.test.tests.registration_form_add_delete
                 "Add button was clicked but user registration form was not opened.");
 
             userRegistrationForm.EnterUserData(user);
+            userRegistrationForm.Submit();
             User[] usersInTable = webTables.GetUsers();
             Assert.That(usersInTable.Contains(user),
                 "Registration form with user data was submitted but user does not appear in the table.");

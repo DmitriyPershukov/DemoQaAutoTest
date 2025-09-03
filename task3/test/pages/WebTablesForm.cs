@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework.Constraints;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using task3.framework.element_utils;
 using task3.framework.page;
@@ -7,16 +8,15 @@ using task3.test.tests.registration_form_add_delete;
 
 namespace task3.test.pages
 {
-    internal class WebTablesForm : BaseForm
+    public class WebTablesForm : BaseForm
     {
-        BaseButton addButton;
-        int padrowCount;
+        private BaseButton addButton;
+        private int padrowCount;
         public WebTablesForm(string name) : base(
             new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
         {
             addButton = new BaseButton(By.Id("addNewRecordButton"), "Add new record");
-            padrowCount = GetPadrowCount();
         }
 
         public void ClickAddButton()
@@ -32,13 +32,34 @@ namespace task3.test.pages
                 "//*[@role='row' and not(contains(@class, '-padRow'))]"));
             foreach (var row in rows) 
             {
+                /*
                 var cellsText = row
                     .FindElements(By.XPath(".//*[@role='gridcell']"))
                     .Select(cell => cell.Text)
                     .ToArray();
-                if (String.IsNullOrWhiteSpace(cellsText[0]))
+                */
+                WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
+                string[] cellsText = new string[6];
+                try
                 {
-                    break;
+                    wait.Until(d =>
+                    {
+                        cellsText = row
+                            .FindElements(By.XPath(".//*[@role='gridcell']"))
+                            .Select(cell => cell.Text)
+                            .ToArray();
+                        foreach (var text in cellsText) 
+                        {
+                            if (String.IsNullOrWhiteSpace(text))
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    });
+                }
+                catch (Exception ex)
+                {
                 }
                 users.Add(new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
                         cellsText[3], Int32.Parse(cellsText[4]), cellsText[5]));
@@ -59,6 +80,11 @@ namespace task3.test.pages
                 }
                 return false;
             });
+        }
+
+        public void RefreshPadrowCount()
+        {
+            padrowCount = GetPadrowCount();
         }
 
         private int GetPadrowCount()
