@@ -1,10 +1,4 @@
-﻿using NLog;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 using task3.framework.testing_utils;
 using task3.framework.web_driver;
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using task3.framework.config_utils;
+﻿using task3.framework.config_utils;
 
 namespace task3.test.tests.registration_form_add_delete
 {

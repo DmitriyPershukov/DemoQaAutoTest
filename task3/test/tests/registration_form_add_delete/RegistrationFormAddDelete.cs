@@ -1,19 +1,8 @@
-﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 using task3.framework.config_utils;
-using task3.framework.element_utils;
-using task3.framework.page;
 using task3.framework.test;
-using task3.framework.testing_utils;
 using task3.framework.web_driver;
 using task3.test.pages;
-using task3.test.tests.global_test_data;
-using task3.test.tests.iframe_has_correct_text;
 
 namespace task3.test.tests.registration_form_add_delete
 {

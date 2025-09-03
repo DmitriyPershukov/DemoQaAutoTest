@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using task3.test.config;
+﻿using task3.test.config;
 
 namespace task3.framework.config_utils
 {

@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.test.elements;
@@ -31,10 +26,18 @@ namespace task3.test.pages
 
         public void ClickAccordionMenuElement(string menuLabel, string menuElementLabel)
         {
-            accordion.
-                GetDropDownMenu(menuLabel)
+            var element = accordion
+                .GetDropDownMenu(menuLabel)
                 .GetElementList()
-                .GetElement(menuElementLabel)
+                .GetElement(menuElementLabel);
+            element.WaitUntilDisplayed(TimeSpan.FromSeconds(2));
+            element.Click();
+        }
+
+        public void ClickDropDownMenuHeader(string label)
+        {
+            accordion
+                .GetDropDownMenu(label)
                 .Click();
         }
     }

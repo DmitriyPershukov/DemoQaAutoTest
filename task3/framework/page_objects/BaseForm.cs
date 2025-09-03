@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using task3.framework.element_utils;
+﻿using task3.framework.element_utils;
 
 namespace task3.framework.page
 {
