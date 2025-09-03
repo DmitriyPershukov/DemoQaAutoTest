@@ -26,6 +26,11 @@ namespace task3.framework.browser_utils
             SwitchToCurrentWindow();
         }
 
+        public static int GetWindowCount()
+        {
+            return GetWindowHandles().Length;
+        }
+
         public static void SwitchToPreviousWindow()
         {
             LoggingManager.GetLogger().Info("Switching to a previous window or tab.");
