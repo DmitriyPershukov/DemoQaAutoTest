@@ -15,8 +15,9 @@ namespace task3.framework.test
         protected GlobalTestData globalTestData;
         public virtual void Setup()
         {
-            globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
             LogTestStart();
+            globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
+            
         }
 
         public virtual void Teardown()
@@ -27,12 +28,12 @@ namespace task3.framework.test
 
         protected void LogTestStart()
         {
-            LoggingManager.GetLogger().Debug($"Starting test: {GetType().Name}");
+            LoggingManager.GetLogger().Info($"Starting test: {GetType().Name}");
         }
 
         protected void LogTestEnd()
         {
-            LoggingManager.GetLogger().Debug($"Ended test: {GetType().Name}");
+            LoggingManager.GetLogger().Info($"Ended test: {GetType().Name}");
         }
     }
 }
