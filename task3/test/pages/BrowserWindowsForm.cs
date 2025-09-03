@@ -11,8 +11,16 @@ namespace task3.test.pages
 {
     public class BrowserWindowsForm : BaseForm
     {
+        BaseButton newTabsButton;
         public BrowserWindowsForm(string name) : base(
             new BareElement(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
-        {}
+        {
+            newTabsButton = new BaseButton(By.Id("tabButton"), "New tabs");
+        }
+
+        public void ClickNewTabsButton()
+        {
+            newTabsButton.Click();
+        }
     }
 }
