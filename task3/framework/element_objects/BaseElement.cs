@@ -23,6 +23,11 @@ namespace task3.framework.element_utils
             return false;
         }
 
+        public bool IsDisplayed()
+        {
+            return GetElement().Displayed;
+        }
+
         public string Name { get { return name; } }
 
         protected IWebElement GetElement()
@@ -35,10 +40,16 @@ namespace task3.framework.element_utils
             return GetElement().Text;
         }
 
-        public void WaitForElement(TimeSpan timeout)
+        public void WaitUntilPresent(TimeSpan timeout)
         {
             WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
             wait.Until(d => IsPresent());
+        }
+
+        public void WaitUntilDisplayed(TimeSpan timeout)
+        {
+            WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
+            wait.Until(d => IsDisplayed());
         }
     }
 }
