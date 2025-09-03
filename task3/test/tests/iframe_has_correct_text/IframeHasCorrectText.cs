@@ -32,7 +32,7 @@ namespace task3.test.tests.iframe_has_correct_text
         }
 
         [Test]
-        public void ButtonDisplaysCorrectAlertTest()
+        public void IframeHasCorrectTextTest()
         {
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
