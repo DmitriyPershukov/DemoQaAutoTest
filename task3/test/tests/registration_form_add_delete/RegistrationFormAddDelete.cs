@@ -70,6 +70,14 @@ namespace task3.test.tests.registration_form_add_delete
             User[] usersInTable = webTables.GetUsers();
             Assert.That(usersInTable.Contains(user),
                 "Registration form with user data was submitted but user does not appear in the table.");
+
+            webTables.RefreshRowCount();
+            webTables.DeleteUser(user);
+            Assert.That(webTables.RowCountChanged(), 
+                $"Delete button was pressed in user {user} row but row count was not changed.");
+            usersInTable = webTables.GetUsers();
+            Assert.That(!usersInTable.Contains(user),
+                $"Delete button was pressed in user {user} row but user is still in the table.");
         }
     }
 }

@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using task3.framework.element_utils;
 using task3.framework.page;
+using task3.framework.testing_utils;
 using task3.framework.web_driver;
 using task3.test.tests.registration_form_add_delete;
 
@@ -11,7 +12,7 @@ namespace task3.test.pages
     public class WebTablesForm : BaseForm
     {
         private BaseButton addButton;
-        private int padrowCount;
+        private int rowCount;
         public WebTablesForm(string name) : base(
             new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
@@ -32,12 +33,6 @@ namespace task3.test.pages
                 "//*[@role='row' and not(contains(@class, '-padRow'))]"));
             foreach (var row in rows) 
             {
-                /*
-                var cellsText = row
-                    .FindElements(By.XPath(".//*[@role='gridcell']"))
-                    .Select(cell => cell.Text)
-                    .ToArray();
-                */
                 WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
                 string[] cellsText = new string[6];
                 try
@@ -72,27 +67,72 @@ namespace task3.test.pages
             WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
             wait.Until(d => 
             { 
-                var newPadrowCount = GetPadrowCount();
-                if (padrowCount != newPadrowCount)
+                if (RowCountChanged())
                 {
-                    padrowCount = newPadrowCount;
+                    rowCount = GetRowCount();
                     return true;
                 }
                 return false;
             });
         }
 
-        public void RefreshPadrowCount()
+        public bool RowCountChanged()
         {
-            padrowCount = GetPadrowCount();
+            return rowCount != GetRowCount();
         }
 
-        private int GetPadrowCount()
+        public void RefreshRowCount()
+        {
+            rowCount = GetRowCount();
+        }
+
+        private int GetRowCount()
         {
             return WebDriverProvider
                 .GetInstance()
-                .FindElements(By.XPath("//*[contains(@class, '-padRow')]"))
-                .Count;
+                .FindElements(By.XPath("//*[contains(@class, 'rt-tbody')]" +
+                "//*[@role='row' and not(contains(@class, '-padRow'))]"))
+                .Count();
+        }
+
+        public void DeleteUser(User user)
+        {
+            var rows = WebDriverProvider.GetInstance()
+                .FindElements(By.XPath("//*[contains(@class, 'rt-tbody')]" +
+                "//*[@role='row' and not(contains(@class, '-padRow'))]"));
+            foreach (var row in rows)
+            {
+                WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
+                string[] cellsText = new string[6];
+                try
+                {
+                    wait.Until(d =>
+                    {
+                        cellsText = row
+                            .FindElements(By.XPath(".//*[@role='gridcell']"))
+                            .Select(cell => cell.Text)
+                            .ToArray();
+                        foreach (var text in cellsText)
+                        {
+                            if (String.IsNullOrWhiteSpace(text))
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    });
+                }
+                catch (Exception ex)
+                {
+                }
+                if(new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
+                        cellsText[3], Int32.Parse(cellsText[4]), cellsText[5]).Equals(user))
+                {
+                    LoggingManager.GetLogger().Debug($"Deleting user: {user}");
+                    row.FindElement(By.XPath(".//*[contains(@id, 'delete-record')]")).Click();
+                    break;
+                }
+            }
         }
     }
 }
