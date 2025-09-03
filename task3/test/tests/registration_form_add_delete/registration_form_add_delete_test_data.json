@@ -1,7 +1,6 @@
 {
   "Users": [
     {
-      "UserNumber": 1,
       "FirstName": "John",
       "LastName": "Snow",
       "Email": "knownothing@gmail.com",
@@ -10,7 +9,6 @@
       "Department": "alpha"
     },
     {
-      "UserNumber": 2,
       "FirstName": "Buttercup",
       "LastName": "Cumbersnatch",
       "Email": "BudapestCandygram@mail.ru",

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,9 @@ namespace task3.test.tests.registration_form_add_delete
         MainPage mainPage;
         PlaygroundPage playgroundPage;
         WebTablesForm webTables;
-        RegistrationFormAddDeleteTestData testData;
+        UserRegistrationForm userRegistrationForm;
+        static RegistrationFormAddDeleteTestData testData = 
+            TestDataManager.GetTestDataModel<RegistrationFormAddDeleteTestData>();
 
         [SetUp]
         public override void Setup()
@@ -29,7 +32,7 @@ namespace task3.test.tests.registration_form_add_delete
             mainPage = new MainPage("Main Page");
             playgroundPage = new PlaygroundPage("Playground Page");
             webTables = new WebTablesForm("Web Tables Page");
-            testData = TestDataManager.GetTestDataModel<RegistrationFormAddDeleteTestData>();
+            userRegistrationForm = new UserRegistrationForm("User Registration Form");
         }
 
         [TearDown]
@@ -38,8 +41,15 @@ namespace task3.test.tests.registration_form_add_delete
             base.Teardown();
         }
 
-        [Test]
-        public void RegistrationFormAddDeleteTest()
+        public static IEnumerable<User> TestCases()
+        {
+            foreach(var user in testData.Users){
+                yield return user;
+            }
+        }
+
+        [TestCaseSource(nameof(TestCases))]
+        public void RegistrationFormAddDeleteTest(User user)
         {
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
@@ -49,6 +59,15 @@ namespace task3.test.tests.registration_form_add_delete
             Assert.That(playgroundPage.IsOpened() && webTables.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Web Tables' was clicked in left menu " +
                 "but Web Tables form was not opened.");
+
+            webTables.ClickAddButton();
+            Assert.That(userRegistrationForm.IsOpened(), 
+                "Add button was clicked but user registration form was not opened.");
+
+            userRegistrationForm.EnterUserData(user);
+            User[] usersInTable = webTables.GetUsers();
+            Assert.That(usersInTable.Contains(user),
+                "Registration form with user data was submitted but user does not appear in the table.");
         }
     }
 }
