@@ -4,7 +4,7 @@ using task3.framework.testing_utils;
 
 namespace task3.test.elements
 {
-    internal class InputField : BaseElement
+    public class InputField : BaseElement
     {
         public InputField(By locator, string name) : base(locator, name)
         {

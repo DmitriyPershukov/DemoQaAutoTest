@@ -4,7 +4,7 @@ using task3.framework.page;
 
 namespace task3.test.pages
 {
-    internal class LinksForm : BaseForm
+    public class LinksForm : BaseForm
     {
         BaseButton homeLink;
         public LinksForm(string name) : base(
