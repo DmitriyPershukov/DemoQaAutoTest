@@ -54,5 +54,11 @@ namespace task3.test.tests.registration_form_add_delete
                    Salary == item.Salary &&
                    Department.Equals(item.Department);
         }
+
+        public override string ToString()
+        {
+            return $"{{FirstName: {FirstName}, LastName: {LastName}, Email: {Email}, Age: {Age}, Salary: {Salary}," +
+                $"Department: {Department}}}";
+        }
     }
 }
