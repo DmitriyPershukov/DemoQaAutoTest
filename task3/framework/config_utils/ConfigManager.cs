@@ -1,4 +1,5 @@
-﻿using task3.test.config;
+﻿using task3.framework.testing_utils;
+using task3.test.config;
 
 namespace task3.framework.config_utils
 {
@@ -8,8 +9,11 @@ namespace task3.framework.config_utils
         public static Config GetConfigurationModel()
         {
             if (config == null)
-            {
+            {      
                 config = FileReader.ReadJsonDataFile<Config>();
+                LoggingManager.GetLogger().Info("Following configuration parameters are applied:\n" +
+                    $"Browser: {config.Browser}\n" +
+                    $"PageLoadStrategy: {config.PageLoadStrategy}");     
             }
             return config;
         }
