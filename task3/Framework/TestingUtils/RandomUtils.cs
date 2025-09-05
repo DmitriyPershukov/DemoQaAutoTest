@@ -1,7 +1,7 @@
 ﻿
 namespace task3.framework.testing_utils
 {
-    public class TestingUtils
+    public class RandomUtils
     {
         private static readonly Random Random = new Random();
         public static string GetRandomText(int length)

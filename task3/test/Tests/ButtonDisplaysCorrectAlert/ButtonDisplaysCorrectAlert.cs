@@ -69,7 +69,7 @@ namespace task3.test.tests.button_displays_correct_alert
                 "'On button click, prompt box will appear' button was clicked " +
                 $"but alert with text '{testData.PromptBoxAlertText}' did not appear.");
 
-            var randomText = TestingUtils.GetRandomText(testData.PromptBoxRandomTextLength);
+            var randomText = RandomUtils.GetRandomText(testData.PromptBoxRandomTextLength);
             AlertUtils.EnterText(randomText);
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(),
