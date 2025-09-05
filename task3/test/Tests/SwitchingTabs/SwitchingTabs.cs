@@ -15,9 +15,8 @@ namespace task3.test.tests.switching_tabs
         LinksForm linksForm;
 
         [SetUp]
-        public override void Setup()
+        public void Setup()
         {
-            base.Setup();
             mainPage = new MainPage();
             playgroundPage = new PlaygroundPage();
             browserWindowsForm = new BrowserWindowsForm();
@@ -26,10 +25,8 @@ namespace task3.test.tests.switching_tabs
         }
 
         [TearDown]
-        public override void Teardown()
-        {
-            base.Teardown();
-        }
+        public void Teardown()
+        {}
 
         [Test]
         public void SwitchingTabsTest()

@@ -6,6 +6,7 @@ using task3.test.pages;
 
 namespace task3.test.tests.registration_form_add_delete
 {
+    [TestFixture]
     public class RegistrationFormAddDelete : BaseTest
     {
         MainPage mainPage;
@@ -16,9 +17,8 @@ namespace task3.test.tests.registration_form_add_delete
             TestDataManager.GetTestDataModel<RegistrationFormAddDeleteTestData>();
 
         [SetUp]
-        public override void Setup()
+        public void Setup()
         {
-            base.Setup();
             mainPage = new MainPage();
             playgroundPage = new PlaygroundPage();
             webTables = new WebTablesForm();
@@ -26,10 +26,7 @@ namespace task3.test.tests.registration_form_add_delete
         }
 
         [TearDown]
-        public override void Teardown()
-        {
-            base.Teardown();
-        }
+        public void Teardown(){}
 
         public static IEnumerable<User> TestCases()
         {

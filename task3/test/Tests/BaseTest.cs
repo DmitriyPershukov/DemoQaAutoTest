@@ -12,7 +12,8 @@ namespace task3.framework.test
         protected GlobalTestData globalTestData;
 
         [SetUp]
-        public virtual void Setup()
+
+        public void Setup()
         {
             LogTestStart();
             globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
@@ -20,7 +21,7 @@ namespace task3.framework.test
         }
 
         [TearDown]
-        public virtual void Teardown()
+        public void Teardown()
         {
             WebDriverProvider.SetInstanceNull();
             LogTestEnd();

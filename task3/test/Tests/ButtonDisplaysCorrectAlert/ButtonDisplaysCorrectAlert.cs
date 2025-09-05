@@ -16,9 +16,8 @@ namespace task3.test.tests.button_displays_correct_alert
         ButtonDisplaysCorrectAlertTestData testData;
 
         [SetUp]
-        public override void Setup()
+        public void Setup()
         {
-            base.Setup();
             mainPage = new MainPage();
             playgroundPage = new PlaygroundPage();
             alertsForm = new AlertsForm();
@@ -26,10 +25,8 @@ namespace task3.test.tests.button_displays_correct_alert
         }
 
         [TearDown]
-        public override void Teardown()
-        {
-            base.Teardown();
-        }
+        public void Teardown()
+        {}
 
         [Test]
         public void ButtonDisplaysCorrectAlertTest()

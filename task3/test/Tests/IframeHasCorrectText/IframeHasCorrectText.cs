@@ -15,9 +15,8 @@ namespace task3.test.tests.iframe_has_correct_text
         IframeHasCorrectTextTestData testData;
 
         [SetUp]
-        public override void Setup()
+        public void Setup()
         {
-            base.Setup();
             mainPage = new MainPage();
             playgroundPage = new PlaygroundPage();
             nestedFramesForm = new NestedFramesForm();
@@ -26,10 +25,8 @@ namespace task3.test.tests.iframe_has_correct_text
         }
 
         [TearDown]
-        public override void Teardown()
-        {
-            base.Teardown();
-        }
+        public void Teardown()
+        {}
 
         [Test]
         public void IframeHasCorrectTextTest()
