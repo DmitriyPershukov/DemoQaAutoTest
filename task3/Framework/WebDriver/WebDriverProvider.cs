@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
+using task3.Framework.ConfigModel;
 using task3.Framework.Utils.ConfigUtils;
-using task3.test.config;
 
 namespace task3.framework.web_driver
 {

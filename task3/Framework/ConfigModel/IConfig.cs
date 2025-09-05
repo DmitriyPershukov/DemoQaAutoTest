@@ -1,4 +1,4 @@
-﻿namespace task3.Framework.Utils.ConfigUtils
+﻿namespace task3.Framework.ConfigModel
 {
     public interface IConfig
     {

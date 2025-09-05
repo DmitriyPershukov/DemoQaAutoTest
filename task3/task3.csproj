@@ -29,7 +29,7 @@
     <None Update="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Test\Config\config.json">
+    <None Update="Framework\ConfigModel\config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Test\Tests\ButtonDisplaysCorrectAlert\button_displays_correct_alert_test_data.json">

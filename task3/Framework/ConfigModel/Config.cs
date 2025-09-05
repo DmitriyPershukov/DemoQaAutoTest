@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenQA.Selenium;
-using task3.Framework.Utils.ConfigUtils;
 
-namespace task3.test.config
+namespace task3.Framework.ConfigModel
 {
     public class Config : IConfig
     {
-        private const string ConfigFilePath = "Test\\Config\\config.json";
+        private const string ConfigFilePath = "Framework\\ConfigModel\\config.json";
         public static string GetConfigFilePath()
         {
             return ConfigFilePath;

@@ -1,4 +1,4 @@
-﻿using task3.Framework.Utils.ConfigUtils;
+﻿using task3.Framework.ConfigModel;
 
 namespace task3.test.tests.global_test_data
 {

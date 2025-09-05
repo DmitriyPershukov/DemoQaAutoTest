@@ -1,6 +1,6 @@
 ﻿using task3.Framework.Logging;
 using task3.Framework.Utils;
-using task3.test.config;
+using task3.Framework.ConfigModel;
 
 namespace task3.Framework.Utils.ConfigUtils
 {
