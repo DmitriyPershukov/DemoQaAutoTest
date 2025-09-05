@@ -10,7 +10,7 @@ namespace task3.test.tests.iframe_has_correct_text
     public class IframeHasCorrectTextTestData : IConfig
     {
         private const string ConfigFilePath =
-            "test\\tests\\iframe_has_correct_text\\iframe_has_correct_text_test_data.json";
+            "Test\\Tests\\IframeHasCorrectText\\iframe_has_correct_text_test_data.json";
         public static string GetConfigFilePath()
         {
             return ConfigFilePath;

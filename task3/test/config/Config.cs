@@ -7,7 +7,7 @@ namespace task3.test.config
 {
     public class Config : IConfig
     {
-        private const string ConfigFilePath = "test\\config\\config.json";
+        private const string ConfigFilePath = "Test\\Config\\config.json";
         public static string GetConfigFilePath()
         {
             return ConfigFilePath;

@@ -5,7 +5,7 @@ namespace task3.test.tests.registration_form_add_delete
     public class RegistrationFormAddDeleteTestData : IConfig
     {
         private const string ConfigFilePath =
-            "test\\tests\\registration_form_add_delete\\registration_form_add_delete_test_data.json";
+            "Test\\Tests\\RegistrationFormAddDelete\\registration_form_add_delete_test_data.json";
         public static string GetConfigFilePath()
         {
             return ConfigFilePath;
