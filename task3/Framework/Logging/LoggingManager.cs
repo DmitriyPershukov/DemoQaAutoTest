@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace task3.framework.testing_utils
+namespace task3.Framework.Logging
 {
     public class LoggingManager
     {

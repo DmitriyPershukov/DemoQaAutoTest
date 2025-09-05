@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using task3.framework.browser_utils;
 using task3.framework.element_utils;
 using task3.framework.page;
+using task3.Framework.Utils.BrowserUtils;
 
 namespace task3.test.pages
 {

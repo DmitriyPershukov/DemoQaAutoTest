@@ -1,4 +1,4 @@
-﻿using task3.framework.config_utils;
+﻿using task3.Framework.Utils.ConfigUtils;
 
 namespace task3.test.tests.button_displays_correct_alert
 {

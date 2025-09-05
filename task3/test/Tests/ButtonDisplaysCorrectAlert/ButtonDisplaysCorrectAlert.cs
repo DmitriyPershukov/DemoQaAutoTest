@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using task3.framework.browser_utils;
-using task3.framework.config_utils;
 using task3.framework.test;
 using task3.framework.testing_utils;
 using task3.framework.web_driver;
+using task3.Framework.Utils.BrowserUtils;
+using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
 
 namespace task3.test.tests.button_displays_correct_alert

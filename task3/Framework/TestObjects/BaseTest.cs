@@ -1,6 +1,6 @@
-﻿using task3.framework.config_utils;
-using task3.framework.testing_utils;
-using task3.framework.web_driver;
+﻿using task3.framework.web_driver;
+using task3.Framework.Logging;
+using task3.Framework.Utils.ConfigUtils;
 using task3.test.tests.global_test_data;
 
 namespace task3.framework.test

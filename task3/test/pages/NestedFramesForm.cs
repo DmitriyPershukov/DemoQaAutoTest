@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using task3.framework.browser_utils;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.framework.web_driver;
+using task3.Framework.Utils.BrowserUtils;
 
 namespace task3.test.pages
 {

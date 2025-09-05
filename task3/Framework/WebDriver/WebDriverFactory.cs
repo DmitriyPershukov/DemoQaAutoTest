@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
-using task3.framework.config_utils;
+using task3.Framework.Utils.ConfigUtils;
 using task3.test.config;
 
 namespace task3.framework.web_driver

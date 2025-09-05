@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
-using task3.framework.testing_utils;
+using task3.Framework.Logging;
+using task3.Framework.Utils.ConfigUtils;
 
-namespace task3.framework.config_utils
+namespace task3.Framework.Utils
 {
     public class FileReader
     {

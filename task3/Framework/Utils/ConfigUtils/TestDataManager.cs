@@ -1,4 +1,6 @@
-﻿namespace task3.framework.config_utils
+﻿using task3.Framework.Utils;
+
+namespace task3.Framework.Utils.ConfigUtils
 {
     public class TestDataManager
     {
