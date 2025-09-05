@@ -7,8 +7,11 @@ namespace task3.test.pages
 {
     public class PlaygroundPage : BaseForm
     {
+        private const string name = "Playground Page";
+
         private Accordion accordion;
-        public PlaygroundPage(string name) : 
+        
+        public PlaygroundPage() : 
             base(new BareElement(By.XPath("//*[contains(@class, 'playgound-body')]"), 
                 "Playground page identifying element"), 
                 name)

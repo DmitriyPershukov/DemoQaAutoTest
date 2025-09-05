@@ -19,9 +19,9 @@ namespace task3.test.tests.button_displays_correct_alert
         public override void Setup()
         {
             base.Setup();
-            mainPage = new MainPage("Main Page");
-            playgroundPage = new PlaygroundPage("Playground Page");
-            alertsForm = new AlertsForm("Alerts Form");
+            mainPage = new MainPage();
+            playgroundPage = new PlaygroundPage();
+            alertsForm = new AlertsForm();
             testData = TestDataManager.GetTestDataModel<ButtonDisplaysCorrectAlertTestData>();
         }
 

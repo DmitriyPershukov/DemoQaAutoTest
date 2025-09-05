@@ -6,10 +6,12 @@ namespace task3.test.pages
 {
     public class MainPage : BaseForm
     {
+        private const string name = "Main Page";
+
         BaseButton alertsWindowsButton;
         BaseButton elementsButton;
-
-        public MainPage(string name) : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
+        
+        public MainPage() : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
             name + " unique element"), name)
         {
             alertsWindowsButton = new BaseButton(

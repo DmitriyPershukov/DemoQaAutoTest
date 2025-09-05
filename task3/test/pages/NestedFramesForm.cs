@@ -9,7 +9,8 @@ namespace task3.test.pages
 {
     public class NestedFramesForm : BaseForm
     {
-        public NestedFramesForm(string name) : base(
+        private const string name = "Nested Frames Form";
+        public NestedFramesForm() : base(
             new BareElement(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Nested Frames')]"),
                 "NestedFramesForm identifying element"), 
             name)

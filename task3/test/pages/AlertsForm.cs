@@ -6,10 +6,13 @@ namespace task3.test.pages
 {
     public class AlertsForm : BaseForm
     {
+        private const string name = "Alerts Form";
+
         BaseButton alertButton;
         BaseButton confirmBoxButton;
         BaseButton promptBoxButton;
-        public AlertsForm(string name) : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
+        
+        public AlertsForm() : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
             name)
         {

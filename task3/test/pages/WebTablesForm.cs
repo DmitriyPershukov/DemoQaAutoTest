@@ -10,9 +10,12 @@ namespace task3.test.pages
 {
     public class WebTablesForm : BaseForm
     {
+        private const string name = "Web Tables Form";
+
         private BaseButton addButton;
         private int rowCount;
-        public WebTablesForm(string name) : base(
+        
+        public WebTablesForm() : base(
             new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
         {

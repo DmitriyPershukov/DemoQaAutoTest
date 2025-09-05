@@ -6,7 +6,8 @@ namespace task3.test.pages
 {
     public class SamplePage : BaseForm
     {
-        public SamplePage(string name) : base(
+        private const string name = "Sample Page";
+        public SamplePage() : base(
             new BareElement(By.Id("sampleHeading"), "SamplePage identifying element"), name)
         {}
     }

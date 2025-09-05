@@ -19,10 +19,10 @@ namespace task3.test.tests.registration_form_add_delete
         public override void Setup()
         {
             base.Setup();
-            mainPage = new MainPage("Main Page");
-            playgroundPage = new PlaygroundPage("Playground Page");
-            webTables = new WebTablesForm("Web Tables Page");
-            userRegistrationForm = new UserRegistrationForm("User Registration Form");
+            mainPage = new MainPage();
+            playgroundPage = new PlaygroundPage();
+            webTables = new WebTablesForm();
+            userRegistrationForm = new UserRegistrationForm();
         }
 
         [TearDown]

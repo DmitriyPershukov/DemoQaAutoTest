@@ -7,7 +7,8 @@ namespace task3.test.pages
 {
     public class FramesForm : BaseForm
     {
-        public FramesForm(string name) : base(
+        private const string name = "Frames Form";
+        public FramesForm() : base(
             new BareElement(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Frames')]"),
             "FramesForm identifying element"), 
             name){}

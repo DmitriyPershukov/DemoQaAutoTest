@@ -18,10 +18,10 @@ namespace task3.test.tests.iframe_has_correct_text
         public override void Setup()
         {
             base.Setup();
-            mainPage = new MainPage("Main Page");
-            playgroundPage = new PlaygroundPage("Playground Page");
-            nestedFramesForm = new NestedFramesForm("Nested Frames Form");
-            framesForm = new FramesForm("Frames Form");
+            mainPage = new MainPage();
+            playgroundPage = new PlaygroundPage();
+            nestedFramesForm = new NestedFramesForm();
+            framesForm = new FramesForm();
             testData = TestDataManager.GetTestDataModel<IframeHasCorrectTextTestData>();
         }
 

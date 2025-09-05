@@ -18,11 +18,11 @@ namespace task3.test.tests.switching_tabs
         public override void Setup()
         {
             base.Setup();
-            mainPage = new MainPage("Main Page");
-            playgroundPage = new PlaygroundPage("Playground Page");
-            browserWindowsForm = new BrowserWindowsForm("Browser Windows Form");
-            samplePage = new SamplePage("Sample Page");
-            linksForm = new LinksForm("Links Form");
+            mainPage = new MainPage();
+            playgroundPage = new PlaygroundPage();
+            browserWindowsForm = new BrowserWindowsForm();
+            samplePage = new SamplePage();
+            linksForm = new LinksForm();
         }
 
         [TearDown]

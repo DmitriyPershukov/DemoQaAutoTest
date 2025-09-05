@@ -8,6 +8,8 @@ namespace task3.test.pages
 {
     public class UserRegistrationForm : BaseForm
     {
+        private const string name = "User Registration Form";
+
         private InputField firstNameField;
         private InputField lastNameField;
         private InputField emailField;
@@ -15,8 +17,8 @@ namespace task3.test.pages
         private InputField salaryField;
         private InputField departmentField;
         private BaseButton submitButton;
-
-        public UserRegistrationForm(string name) : base(
+        
+        public UserRegistrationForm() : base(
             new BareElement(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
         {
             firstNameField = new InputField(By.Id("firstName"), "FirstName input field");
