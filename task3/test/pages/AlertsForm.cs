@@ -8,18 +8,18 @@ namespace task3.test.pages
     {
         private const string name = "Alerts Form";
 
-        BaseButton alertButton;
-        BaseButton confirmBoxButton;
-        BaseButton promptBoxButton;
+        Button alertButton;
+        Button confirmBoxButton;
+        Button promptBoxButton;
         
         public AlertsForm() : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
             name)
         {
-            alertButton = new BaseButton(By.Id("alertButton"), "Alert");
-            confirmBoxButton = new BaseButton(By.Id("confirmButton"), 
+            alertButton = new Button(By.Id("alertButton"), "Alert");
+            confirmBoxButton = new Button(By.Id("confirmButton"), 
                 "Confirm box alert");
-            promptBoxButton = new BaseButton(By.Id("promtButton"),
+            promptBoxButton = new Button(By.Id("promtButton"),
                 "Prompt box alert");
         }
 

@@ -12,14 +12,14 @@ namespace task3.test.pages
     {
         private const string name = "Web Tables Form";
 
-        private BaseButton addButton;
+        private Button addButton;
         private int rowCount;
         
         public WebTablesForm() : base(
             new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
         {
-            addButton = new BaseButton(By.Id("addNewRecordButton"), "Add new record");
+            addButton = new Button(By.Id("addNewRecordButton"), "Add new record");
         }
 
         public void ClickAddButton()

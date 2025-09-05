@@ -8,16 +8,16 @@ namespace task3.test.pages
     {
         private const string name = "Main Page";
 
-        BaseButton alertsWindowsButton;
-        BaseButton elementsButton;
+        Button alertsWindowsButton;
+        Button elementsButton;
         
         public MainPage() : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
             name + " unique element"), name)
         {
-            alertsWindowsButton = new BaseButton(
+            alertsWindowsButton = new Button(
                 By.XPath("//*[contains(@class, 'top-card')]//*[contains(text(), 'Alerts')]"),
                 "Alerts, Frame & Windows");
-            elementsButton = new BaseButton(
+            elementsButton = new Button(
                 By.XPath("//*[contains(@class, 'top-card')]//*[contains(text(), 'Elements')]"),
                 "Alerts, Frame & Windows");
         }

@@ -6,7 +6,7 @@ using task3.framework.web_driver;
 
 namespace task3.test.elements
 {
-    public class DropDownMenu : BaseButton
+    public class DropDownMenu : Button
     {
         private MenuElementList menuElements;
         public DropDownMenu(By locator, string name) : base(locator, name){}

@@ -16,7 +16,7 @@ namespace task3.test.pages
         private InputField ageField;
         private InputField salaryField;
         private InputField departmentField;
-        private BaseButton submitButton;
+        private Button submitButton;
         
         public UserRegistrationForm() : base(
             new BareElement(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
@@ -27,7 +27,7 @@ namespace task3.test.pages
             ageField = new InputField(By.Id("age"), "Age input field");
             salaryField = new InputField(By.Id("salary"), "Salary input field");
             departmentField = new InputField(By.Id("department"), "Department input field");
-            submitButton = new BaseButton(By.Id("submit"), "Submit");
+            submitButton = new Button(By.Id("submit"), "Submit");
         }
 
         public void EnterUserData(User user)

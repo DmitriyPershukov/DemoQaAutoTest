@@ -3,7 +3,7 @@ using task3.framework.element_utils;
 
 namespace task3.test.elements
 {
-    public class MenuElement : BaseButton
+    public class MenuElement : Button
     {
         public MenuElement(By locator, string name) : base(locator, name)
         {

@@ -8,12 +8,12 @@ namespace task3.test.pages
     {
         private const string name = "Browser Windows Form";
 
-        BaseButton newTabButton;
+        Button newTabButton;
         
         public BrowserWindowsForm() : base(
             new BareElement(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
         {
-            newTabButton = new BaseButton(By.Id("tabButton"), "New tab");
+            newTabButton = new Button(By.Id("tabButton"), "New tab");
         }
 
         public void ClickNewTabButton()

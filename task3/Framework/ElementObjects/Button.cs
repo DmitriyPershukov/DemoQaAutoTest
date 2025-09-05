@@ -4,9 +4,9 @@ using task3.Framework.Logging;
 
 namespace task3.framework.element_utils
 {
-    public class BaseButton : BaseElement
+    public class Button : BaseElement
     {
-        public BaseButton(By locator, string name) : base(locator, name)
+        public Button(By locator, string name) : base(locator, name)
         {
         }
 

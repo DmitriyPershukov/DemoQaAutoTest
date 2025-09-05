@@ -8,12 +8,12 @@ namespace task3.test.pages
     {
         private const string name = "Links Form";
 
-        BaseButton homeLink;
+        Button homeLink;
         
         public LinksForm() : base(
             new BareElement(By.Id("linkWrapper"), "LinksForm identifying element"), name)
         {
-            homeLink = new BaseButton(By.Id("simpleLink"), "Home Link");
+            homeLink = new Button(By.Id("simpleLink"), "Home Link");
         }
 
         public void ClickHomeLink()
