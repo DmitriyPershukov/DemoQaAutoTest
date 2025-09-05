@@ -6,22 +6,13 @@ namespace task3.framework.browser_utils
 {
     public class AlertUtils
     {
-        public static bool IsAlertWithTextPresent(string text)
+        public static string GetAlertText()
         {
-            if (IsAlertPresent())
-            {
-                return WebDriverProvider
-                    .GetInstance()
-                    .SwitchTo()
-                    .Alert()
-                    .Text
-                    .Equals(text);
-            }
-            else
-            {
-                return false;
-            }
-            
+            return WebDriverProvider
+                .GetInstance()
+                .SwitchTo()
+                .Alert()
+                .Text;     
         }
 
         public static void ClickOk()
