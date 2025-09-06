@@ -17,9 +17,6 @@ namespace task3.test.pages
             newTabButton = new Button(By.Id("tabButton"), "New tab");
         }
 
-        public void ClickNewTabButton()
-        {
-            newTabButton.Click();
-        }
+        public Button NewTabButton { get => newTabButton;}
     }
 }

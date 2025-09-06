@@ -58,7 +58,7 @@ namespace task3.Test.Tests
                 $"Ok button in confirm box alert was clicked " +
                 $"but '{testData.ConfirmBoxConfirmationText}' did not appear.");
 
-            alertsForm.PrpromptBoxButton.Click();
+            alertsForm.PromptBoxButton.Click();
             Assert.That(AlertUtils.GetAlertText(), Is.EqualTo(testData.PromptBoxAlertText),
                 "'On button click, prompt box will appear' button was clicked " +
                 $"but alert with text '{testData.PromptBoxAlertText}' did not appear.");

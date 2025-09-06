@@ -30,20 +30,9 @@ namespace task3.test.pages
                                                           "Prompt box alert confirmation text");
         }
 
-        public Button AlertButton 
-        {
-            get {return alertButton;}
-        }
-
-        public Button ConfirmBoxButton 
-        { 
-            get {return confirmBoxButton;}
-        }
-
-        public Button PrpromptBoxButton
-        {
-            get {return promptBoxButton;}
-        }
+        public Button AlertButton { get => alertButton; }
+        public Button ConfirmBoxButton { get => confirmBoxButton; }
+        public Button PromptBoxButton { get => promptBoxButton; }
 
         public TextBox ConfirmBoxConfirmationText
         { 
@@ -74,6 +63,6 @@ namespace task3.test.pages
                     throw new Exception("Confirmation text element is missing.");
                 }  
             }
-        }
+        }       
     }
 }

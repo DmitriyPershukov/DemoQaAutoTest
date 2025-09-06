@@ -36,7 +36,7 @@ namespace task3.Test.Tests
                 "Alerts, Frame & Windows button was clicked and button 'Browser Windows' was clicked in left menu " +
                 "but Browser Windows form was not opened.");
 
-            browserWindowsForm.ClickNewTabButton();
+            browserWindowsForm.NewTabButton.Click();
             WindowsUtils.SwitchToNewWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 2,
                 "New tab buttons was clicked but new tab was not opened.");
