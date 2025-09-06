@@ -11,7 +11,7 @@ namespace task3.test.pages
     {
         private const string name = "Nested Frames Form";
         public NestedFramesForm() : base(
-            new BareElement(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Nested Frames')]"),
+            new TextBox(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Nested Frames')]"),
                 "NestedFramesForm identifying element"), 
             name)
         {
@@ -19,7 +19,7 @@ namespace task3.test.pages
 
         private bool IsTextPresentOnPage(string text)
         {
-            return new BareElement(By.XPath($"//*[contains(text(), '{text}')]"), "").IsPresent();
+            return new TextBox(By.XPath($"//*[contains(text(), '{text}')]"), "").IsPresent();
         }
 
         public bool AreStringsPresent(string[] strings)
@@ -31,11 +31,11 @@ namespace task3.test.pages
                 bool parentIframeHasText = false;
                 bool childIframeHasText = false;
                 IframeUtils.SwitchToFirstIframe();
-                BareElement iframeElement = new BareElement(By.XPath("//iframe"), "iframe body");
+                TextBox iframeElement = new TextBox(By.XPath("//iframe"), "iframe body");
                 wait.Until(d => iframeElement.IsPresent());
                 parentIframeHasText = IsTextPresentOnPage(s);   
                 IframeUtils.SwitchToFirstIframe();
-                iframeElement = new BareElement(By.XPath("//p"), "iframe body");
+                iframeElement = new TextBox(By.XPath("//p"), "iframe body");
                 wait.Until(d => iframeElement.IsPresent());
                 childIframeHasText = IsTextPresentOnPage(s);
                 IframeUtils.SwitchToDefaultContent();

@@ -12,7 +12,7 @@ namespace task3.test.pages
         private Button confirmBoxButton;
         private Button promptBoxButton;
         
-        public AlertsForm() : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
+        public AlertsForm() : base(new TextBox(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
             name)
         {
@@ -40,7 +40,7 @@ namespace task3.test.pages
 
         public string GetConfirmBoxConfirmationText()
         {
-            BareElement confirmationMessage = new BareElement(By.Id("confirmResult"),
+            TextBox confirmationMessage = new TextBox(By.Id("confirmResult"),
                                                                     "Confirm box alert confirmation text");
             if (confirmationMessage.IsPresent())
             {
@@ -54,7 +54,7 @@ namespace task3.test.pages
 
         public string GetPromptBoxConfirmationText()
         {
-            BareElement confirmationMessage = new BareElement(By.Id("promptResult"),
+            TextBox confirmationMessage = new TextBox(By.Id("promptResult"),
                                                                     "Prompt box alert confirmation text");
             if (confirmationMessage.IsPresent())
             {

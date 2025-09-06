@@ -11,7 +11,7 @@ namespace task3.test.pages
         Button homeLink;
         
         public LinksForm() : base(
-            new BareElement(By.Id("linkWrapper"), "LinksForm identifying element"), name)
+            new TextBox(By.Id("linkWrapper"), "LinksForm identifying element"), name)
         {
             homeLink = new Button(By.Id("simpleLink"), "Home Link");
         }

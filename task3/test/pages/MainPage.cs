@@ -11,7 +11,7 @@ namespace task3.test.pages
         Button alertsWindowsButton;
         Button elementsButton;
         
-        public MainPage() : base(new BareElement(By.XPath("//*[contains(@class, 'home-content')]"), 
+        public MainPage() : base(new TextBox(By.XPath("//*[contains(@class, 'home-content')]"), 
             name + " unique element"), name)
         {
             alertsWindowsButton = new Button(

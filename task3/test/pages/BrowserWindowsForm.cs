@@ -11,7 +11,7 @@ namespace task3.test.pages
         Button newTabButton;
         
         public BrowserWindowsForm() : base(
-            new BareElement(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
+            new TextBox(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
         {
             newTabButton = new Button(By.Id("tabButton"), "New tab");
         }

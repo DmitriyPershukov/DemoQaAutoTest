@@ -12,7 +12,7 @@ namespace task3.test.pages
         private Accordion accordion;
         
         public PlaygroundPage() : 
-            base(new BareElement(By.XPath("//*[contains(@class, 'playgound-body')]"), 
+            base(new TextBox(By.XPath("//*[contains(@class, 'playgound-body')]"), 
                 "Playground page identifying element"), 
                 name)
         {

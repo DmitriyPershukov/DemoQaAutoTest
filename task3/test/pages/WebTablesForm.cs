@@ -16,7 +16,7 @@ namespace task3.test.pages
         private int rowCount;
         
         public WebTablesForm() : base(
-            new BareElement(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
+            new TextBox(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
         {
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");

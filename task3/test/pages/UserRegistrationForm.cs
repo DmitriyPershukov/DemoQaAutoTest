@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using task3.framework.element_utils;
 using task3.framework.page;
-using task3.test.elements;
+using task3.Framework.ElementObjects;
 using task3.Test.TestDataModels;
 
 namespace task3.test.pages
@@ -19,7 +19,7 @@ namespace task3.test.pages
         private Button submitButton;
         
         public UserRegistrationForm() : base(
-            new BareElement(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
+            new TextBox(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
         {
             firstNameField = new InputField(By.Id("firstName"), "FirstName input field");
             lastNameField = new InputField(By.Id("lastName"), "LastName input field");

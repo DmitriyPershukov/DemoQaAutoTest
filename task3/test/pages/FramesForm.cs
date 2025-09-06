@@ -9,7 +9,7 @@ namespace task3.test.pages
     {
         private const string name = "Frames Form";
         public FramesForm() : base(
-            new BareElement(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Frames')]"),
+            new TextBox(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Frames')]"),
             "FramesForm identifying element"), 
             name){}
 
@@ -32,7 +32,7 @@ namespace task3.test.pages
 
         private string GetCurrentIframeText()
         {
-            BareElement textElement = new BareElement(By.Id("sampleHeading"), "");
+            TextBox textElement = new TextBox(By.Id("sampleHeading"), "");
             textElement.WaitUntilPresent(TimeSpan.FromSeconds(2));
             return textElement.GetText();
         }

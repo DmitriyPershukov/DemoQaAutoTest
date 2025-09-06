@@ -2,7 +2,7 @@
 using task3.framework.element_utils;
 using task3.Framework.Logging;
 
-namespace task3.test.elements
+namespace task3.Framework.ElementObjects
 {
     public class InputField : BaseElement
     {
