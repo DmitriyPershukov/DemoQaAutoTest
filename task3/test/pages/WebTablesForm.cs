@@ -23,7 +23,12 @@ namespace task3.test.pages
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");
         }
 
-        public Button AddButton { get => addButton; }
+        private Button AddButton { get => addButton; }
+
+        public void ClickAddButton()
+        {
+            AddButton.Click();
+        }
 
         public User[] GetUsers()
         {

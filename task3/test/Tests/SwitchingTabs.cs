@@ -30,13 +30,13 @@ namespace task3.Test.Tests
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
-            mainPage.AlertsWindowsButton.Click();
+            mainPage.ClickAlertsWindowsButton();
             playgroundPage.ClickAccordionMenuElement("Alerts", "Browser Windows");
             Assert.That(playgroundPage.IsOpened() && browserWindowsForm.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Browser Windows' was clicked in left menu " +
                 "but Browser Windows form was not opened.");
 
-            browserWindowsForm.NewTabButton.Click();
+            browserWindowsForm.ClickNewTabButton();
             WindowsUtils.SwitchToNewWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 2,
                 "New tab buttons was clicked but new tab was not opened.");
@@ -55,7 +55,7 @@ namespace task3.Test.Tests
             Assert.That(linksForm.IsOpened(), 
                 "Links button in left side menu was clicked but links form did not open.");
 
-            linksForm.HomeLink.Click();
+            linksForm.ClickHomeLink();
             WindowsUtils.SwitchToNewWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 2,
                 "Home link was clicked but new tab was not opened.");

@@ -30,39 +30,51 @@ namespace task3.test.pages
                                                           "Prompt box alert confirmation text");
         }
 
-        public Button AlertButton { get => alertButton; }
-        public Button ConfirmBoxButton { get => confirmBoxButton; }
-        public Button PromptBoxButton { get => promptBoxButton; }
+        private Button AlertButton { get => alertButton; }
 
-        public TextBox ConfirmBoxConfirmationText
-        { 
-            get 
-            {
-                if (confirmBoxConfirmationText.IsPresent())
-                {
-                    return confirmBoxConfirmationText;
-                }
-                else
-                {
-                    throw new Exception("Confirmation text element is missing.");
-                }
-                
-            } 
+        public void ClickAlertButton()
+        {
+            AlertButton.Click();
+        }
+        private Button ConfirmBoxButton { get => confirmBoxButton; }
+
+        public void ClickConfirmBoxButton()
+        {
+            ConfirmBoxButton.Click();
+        }
+        private Button PromptBoxButton { get => promptBoxButton; }
+
+        public void ClickPromptBoxButton()
+        {
+            PromptBoxButton.Click();
         }
 
-        public TextBox PromptBoxConfirmationText 
+        private TextBox ConfirmBoxConfirmationText { get => confirmBoxConfirmationText; }
+
+        public string GetConfirmBoxConfirmationText()
         {
-            get 
+            if (ConfirmBoxConfirmationText.IsPresent())
             {
-                if (promptBoxConfirmationText.IsPresent())
-                {
-                    return promptBoxConfirmationText;
-                }
-                else
-                {
-                    throw new Exception("Confirmation text element is missing.");
-                }  
+                return ConfirmBoxConfirmationText.GetText(); ;
             }
-        }       
+            else
+            {
+                throw new Exception("Confirmation text element is missing.");
+            }
+        }
+
+        private TextBox PromptBoxConfirmationText { get => promptBoxConfirmationText; }
+
+        public string GetPromptBoxConfirmationText()
+        {
+            if (PromptBoxConfirmationText.IsPresent())
+            {
+                return PromptBoxConfirmationText.GetText();
+            }
+            else
+            {
+                throw new Exception("Confirmation text element is missing.");
+            }
+        }
     }
 }

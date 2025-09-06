@@ -22,10 +22,10 @@ namespace task3.test.pages
 
         public bool IsDropDownMenuCollapsed(string label)
         {
-            return accordion.
-                GetDropDownMenu(label).
-                GetElementList().
-                IsCollapsed();
+            return accordion
+                .GetDropDownMenu(label)
+                .GetElementList()
+                .IsCollapsed();
         }
 
         public void ClickAccordionMenuElement(string menuLabel, string menuElementLabel)

@@ -39,18 +39,18 @@ namespace task3.Test.Tests
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
-            mainPage.ElementsButton.Click();
+            mainPage.ClickElementsButton();
             playgroundPage.ClickAccordionMenuElement("Elements", "Web Tables");
             Assert.That(playgroundPage.IsOpened() && webTables.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Web Tables' was clicked in left menu " +
                 "but Web Tables form was not opened.");
 
-            webTables.AddButton.Click();
+            webTables.ClickAddButton();
             Assert.That(userRegistrationForm.IsOpened(), 
                 "Add button was clicked but user registration form was not opened.");
 
             userRegistrationForm.EnterUserData(user);
-            userRegistrationForm.SubmitButton.Click();
+            userRegistrationForm.ClickSubmitButton();
             User[] usersInTable = webTables.GetUsers();
             Assert.That(usersInTable.Contains(user),
                 "Registration form with user data was submitted but user does not appear in the table.");

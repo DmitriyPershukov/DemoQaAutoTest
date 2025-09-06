@@ -17,6 +17,11 @@ namespace task3.test.pages
             homeLink = new Button(By.Id("simpleLink"), "Home Link");
         }
 
-        public Button HomeLink { get => homeLink; }
+        private Button HomeLink { get => homeLink; }
+
+        public void ClickHomeLink()
+        {
+            HomeLink.Click();
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace task3.Test.Tests
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
-            mainPage.AlertsWindowsButton.Click();
+            mainPage.ClickAlertsWindowsButton();
             playgroundPage.ClickAccordionMenuElement("Alerts", "Nested Frames");
             Assert.That(playgroundPage.IsOpened() && nestedFramesForm.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Nested Frames' was clicked in left menu " +

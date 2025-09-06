@@ -23,7 +23,17 @@ namespace task3.test.pages
                 "Alerts, Frame & Windows");
         }
 
-        public Button AlertsWindowsButton { get => alertsWindowsButton; }
-        public Button ElementsButton { get => elementsButton; }
+        private Button AlertsWindowsButton { get => alertsWindowsButton; }
+        private Button ElementsButton { get => elementsButton; }
+
+        public void ClickAlertsWindowsButton()
+        {
+            AlertsWindowsButton.Click();
+        }
+
+        public void ClickElementsButton()
+        {
+            ElementsButton.Click();
+        }
     }
 }

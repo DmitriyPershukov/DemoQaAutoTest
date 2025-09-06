@@ -30,7 +30,12 @@ namespace task3.test.pages
             submitButton = new Button(By.Id("submit"), "Submit");
         }
 
-        public Button SubmitButton { get => submitButton; }
+        private Button SubmitButton { get => submitButton; }
+
+        public void ClickSubmitButton()
+        {
+            SubmitButton.Click();
+        }
 
         public void EnterUserData(User user)
         {
