@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using task3.framework.element_utils;
 using task3.framework.page;
+using task3.Framework.ElementObjects;
 
 namespace task3.test.pages
 {
@@ -11,7 +12,7 @@ namespace task3.test.pages
         Button newTabButton;
         
         public BrowserWindowsForm() : base(
-            new TextBox(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
+            new ElementContainer(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
         {
             newTabButton = new Button(By.Id("tabButton"), "New tab");
         }

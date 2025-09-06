@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.framework.web_driver;
+using task3.Framework.ElementObjects;
 using task3.Framework.Logging;
 using task3.Test.TestDataModels;
 
@@ -16,7 +17,7 @@ namespace task3.test.pages
         private int rowCount;
         
         public WebTablesForm() : base(
-            new TextBox(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
+            new ElementContainer(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
         {
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");

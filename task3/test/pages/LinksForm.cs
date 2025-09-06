@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using task3.framework.element_utils;
 using task3.framework.page;
+using task3.Framework.ElementObjects;
 
 namespace task3.test.pages
 {
@@ -11,7 +12,7 @@ namespace task3.test.pages
         Button homeLink;
         
         public LinksForm() : base(
-            new TextBox(By.Id("linkWrapper"), "LinksForm identifying element"), name)
+            new ElementContainer(By.Id("linkWrapper"), "LinksForm identifying element"), name)
         {
             homeLink = new Button(By.Id("simpleLink"), "Home Link");
         }

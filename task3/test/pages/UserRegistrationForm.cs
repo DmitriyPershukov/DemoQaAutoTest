@@ -19,7 +19,7 @@ namespace task3.test.pages
         private Button submitButton;
         
         public UserRegistrationForm() : base(
-            new TextBox(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
+            new ElementContainer(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
         {
             firstNameField = new InputField(By.Id("firstName"), "FirstName input field");
             lastNameField = new InputField(By.Id("lastName"), "LastName input field");

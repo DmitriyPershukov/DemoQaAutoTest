@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using task3.framework.element_utils;
 using task3.framework.page;
+using task3.Framework.ElementObjects;
 
 namespace task3.test.pages
 {
@@ -11,8 +12,8 @@ namespace task3.test.pages
         Button alertsWindowsButton;
         Button elementsButton;
         
-        public MainPage() : base(new TextBox(By.XPath("//*[contains(@class, 'home-content')]"), 
-            name + " unique element"), name)
+        public MainPage() : base(new ElementContainer(By.XPath("//*[contains(@class, 'home-content')]"), 
+            "Main page identifying element"), name)
         {
             alertsWindowsButton = new Button(
                 By.XPath("//*[contains(@class, 'top-card')]//*[contains(text(), 'Alerts')]"),
