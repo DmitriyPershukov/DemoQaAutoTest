@@ -13,7 +13,9 @@ namespace task3.test.pages
         private Button alertButton;
         private Button confirmBoxButton;
         private Button promptBoxButton;
-        
+        private TextBox confirmBoxConfirmationText;
+        TextBox promptBoxConfirmationText;
+
         public AlertsForm() : base(new ElementContainer(By.Id("javascriptAlertsWrapper"),
             "AlertsForm identifying element"), name)
         {
@@ -22,6 +24,10 @@ namespace task3.test.pages
                 "Confirm box alert");
             promptBoxButton = new Button(By.Id("promtButton"),
                 "Prompt box alert");
+            confirmBoxConfirmationText = new TextBox(By.Id("confirmResult"),
+                                                           "Confirm box alert confirmation text");
+            promptBoxConfirmationText = new TextBox(By.Id("promptResult"),
+                                                          "Prompt box alert confirmation text");
         }
 
         public Button AlertButton 
@@ -39,31 +45,34 @@ namespace task3.test.pages
             get {return promptBoxButton;}
         }
 
-        public string GetConfirmBoxConfirmationText()
-        {
-            TextBox confirmationMessage = new TextBox(By.Id("confirmResult"),
-                                                                    "Confirm box alert confirmation text");
-            if (confirmationMessage.IsPresent())
+        public TextBox ConfirmBoxConfirmationText
+        { 
+            get 
             {
-                return confirmationMessage.GetText();
-            }
-            else
-            {
-                throw new Exception("Confirmation text element is missing.");
-            }
+                if (confirmBoxConfirmationText.IsPresent())
+                {
+                    return confirmBoxConfirmationText;
+                }
+                else
+                {
+                    throw new Exception("Confirmation text element is missing.");
+                }
+                
+            } 
         }
 
-        public string GetPromptBoxConfirmationText()
+        public TextBox PromptBoxConfirmationText 
         {
-            TextBox confirmationMessage = new TextBox(By.Id("promptResult"),
-                                                                    "Prompt box alert confirmation text");
-            if (confirmationMessage.IsPresent())
+            get 
             {
-                return confirmationMessage.GetText().Substring(12);
-            }
-            else
-            {
-                throw new Exception("Confirmation text element is missing.");
+                if (promptBoxConfirmationText.IsPresent())
+                {
+                    return promptBoxConfirmationText;
+                }
+                else
+                {
+                    throw new Exception("Confirmation text element is missing.");
+                }  
             }
         }
     }

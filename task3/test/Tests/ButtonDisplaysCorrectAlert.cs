@@ -54,7 +54,7 @@ namespace task3.Test.Tests
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(), 
                 "Ok button in confirm box alert was clicked but alert was not closed.");
-            Assert.That(alertsForm.GetConfirmBoxConfirmationText(), Is.EqualTo(testData.ConfirmBoxConfirmationText),
+            Assert.That(alertsForm.ConfirmBoxConfirmationText.GetText(), Is.EqualTo(testData.ConfirmBoxConfirmationText),
                 $"Ok button in confirm box alert was clicked " +
                 $"but '{testData.ConfirmBoxConfirmationText}' did not appear.");
 
@@ -68,7 +68,7 @@ namespace task3.Test.Tests
             AlertUtils.ClickOk();
             Assert.That(!AlertUtils.IsAlertPresent(),
                 "Ok button in prompt box alert was clicked but alert was not closed.");
-            Assert.That(alertsForm.GetPromptBoxConfirmationText(), Is.EqualTo(randomText),
+            Assert.That(alertsForm.PromptBoxConfirmationText.GetText().Substring(12), Is.EqualTo(randomText),
                 $"Ok button in prompt box alert was clicked but text '{randomText}' did not appear.");
         }
     }
