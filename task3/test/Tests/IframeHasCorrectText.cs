@@ -3,8 +3,9 @@ using task3.framework.test;
 using task3.framework.web_driver;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
+using task3.Test.TestDataModels;
 
-namespace task3.test.tests.iframe_has_correct_text
+namespace task3.Test.Tests
 {
     public class IframeHasCorrectText : BaseTest
     {

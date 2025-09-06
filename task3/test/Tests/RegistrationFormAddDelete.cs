@@ -3,8 +3,9 @@ using task3.framework.test;
 using task3.framework.web_driver;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
+using task3.Test.TestDataModels;
 
-namespace task3.test.tests.registration_form_add_delete
+namespace task3.Test.Tests
 {
     [TestFixture]
     public class RegistrationFormAddDelete : BaseTest

@@ -1,11 +1,11 @@
 ﻿using task3.Framework.ConfigModel;
 
-namespace task3.test.tests.registration_form_add_delete
+namespace task3.Test.TestDataModels
 {
     public class RegistrationFormAddDeleteTestData : IConfig
     {
         private const string ConfigFilePath =
-            "Test\\Tests\\RegistrationFormAddDelete\\registration_form_add_delete_test_data.json";
+            "Test\\TestData\\registration_form_add_delete_test_data.json";
         public static string GetConfigFilePath()
         {
             return ConfigFilePath;

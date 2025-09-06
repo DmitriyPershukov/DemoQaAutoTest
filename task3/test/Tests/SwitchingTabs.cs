@@ -4,7 +4,7 @@ using task3.framework.web_driver;
 using task3.Framework.Utils.BrowserUtils;
 using task3.test.pages;
 
-namespace task3.test.tests.switching_tabs
+namespace task3.Test.Tests
 {
     public class SwitchingTabs : BaseTest
     {

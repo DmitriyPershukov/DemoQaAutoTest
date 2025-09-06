@@ -5,8 +5,9 @@ using task3.framework.web_driver;
 using task3.Framework.Utils.BrowserUtils;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
+using task3.Test.TestDataModels;
 
-namespace task3.test.tests.button_displays_correct_alert
+namespace task3.Test.Tests
 {
     public class ButtonDisplaysCorrectAlert : BaseTest
     {

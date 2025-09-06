@@ -2,7 +2,7 @@
 using task3.framework.web_driver;
 using task3.Framework.Logging;
 using task3.Framework.Utils.ConfigUtils;
-using task3.test.tests.global_test_data;
+using task3.Test.TestDataModels;
 
 namespace task3.framework.test
 {

@@ -4,7 +4,7 @@ using task3.framework.element_utils;
 using task3.framework.page;
 using task3.framework.web_driver;
 using task3.Framework.Logging;
-using task3.test.tests.registration_form_add_delete;
+using task3.Test.TestDataModels;
 
 namespace task3.test.pages
 {

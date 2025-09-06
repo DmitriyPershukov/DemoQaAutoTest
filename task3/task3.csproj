@@ -32,16 +32,16 @@
     <None Update="Framework\ConfigModel\config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Test\Tests\ButtonDisplaysCorrectAlert\button_displays_correct_alert_test_data.json">
+    <None Update="Test\TestData\button_displays_correct_alert_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Test\Tests\GlobalTestData\global_test_data.json">
+    <None Update="Test\TestData\global_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Test\Tests\IframeHasCorrectText\iframe_has_correct_text_test_data.json">
+    <None Update="Test\TestData\iframe_has_correct_text_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Test\Tests\RegistrationFormAddDelete\registration_form_add_delete_test_data.json">
+    <None Update="Test\TestData\registration_form_add_delete_test_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
