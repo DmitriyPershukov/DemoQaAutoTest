@@ -45,12 +45,12 @@ namespace task3.Test.Tests
                 "Alerts, Frame & Windows button was clicked and button 'Web Tables' was clicked in left menu " +
                 "but Web Tables form was not opened.");
 
-            webTables.ClickAddButton();
+            webTables.AddButton.Click();
             Assert.That(userRegistrationForm.IsOpened(), 
                 "Add button was clicked but user registration form was not opened.");
 
             userRegistrationForm.EnterUserData(user);
-            userRegistrationForm.Submit();
+            userRegistrationForm.SubmitButton.Click();
             User[] usersInTable = webTables.GetUsers();
             Assert.That(usersInTable.Contains(user),
                 "Registration form with user data was submitted but user does not appear in the table.");

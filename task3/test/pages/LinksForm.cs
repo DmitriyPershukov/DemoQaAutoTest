@@ -9,7 +9,7 @@ namespace task3.test.pages
     {
         private const string name = "Links Form";
 
-        Button homeLink;
+        private Button homeLink;
         
         public LinksForm() : base(
             new ElementContainer(By.Id("linkWrapper"), "LinksForm identifying element"), name)
@@ -17,9 +17,6 @@ namespace task3.test.pages
             homeLink = new Button(By.Id("simpleLink"), "Home Link");
         }
 
-        public void ClickHomeLink()
-        {
-            homeLink.Click();
-        }
+        public Button HomeLink { get => homeLink; }
     }
 }

@@ -55,7 +55,7 @@ namespace task3.Test.Tests
             Assert.That(linksForm.IsOpened(), 
                 "Links button in left side menu was clicked but links form did not open.");
 
-            linksForm.ClickHomeLink();
+            linksForm.HomeLink.Click();
             WindowsUtils.SwitchToNewWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 2,
                 "Home link was clicked but new tab was not opened.");

@@ -30,6 +30,8 @@ namespace task3.test.pages
             submitButton = new Button(By.Id("submit"), "Submit");
         }
 
+        public Button SubmitButton { get => submitButton; }
+
         public void EnterUserData(User user)
         {
             firstNameField.SendKeys(user.FirstName);
@@ -38,11 +40,6 @@ namespace task3.test.pages
             ageField.SendKeys(user.Age.ToString());
             salaryField.SendKeys(user.Salary.ToString());
             departmentField.SendKeys(user.Department);
-        }
-
-        public void Submit()
-        {
-            submitButton.Click();
         }
     }
 }

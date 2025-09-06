@@ -9,8 +9,8 @@ namespace task3.test.pages
     {
         private const string name = "Main Page";
 
-        Button alertsWindowsButton;
-        Button elementsButton;
+        private Button alertsWindowsButton;
+        private Button elementsButton;
         
         public MainPage() : base(new ElementContainer(By.XPath("//*[contains(@class, 'home-content')]"), 
             "Main page identifying element"), name)
@@ -23,20 +23,7 @@ namespace task3.test.pages
                 "Alerts, Frame & Windows");
         }
 
-        public Button AlertsWindowsButton
-        {
-            get
-            {
-                return alertsWindowsButton;
-            }
-        }
-
-        public Button ElementsButton
-        {
-            get
-            {
-                return elementsButton;
-            }
-        }
+        public Button AlertsWindowsButton { get => alertsWindowsButton; }
+        public Button ElementsButton { get => elementsButton; }
     }
 }

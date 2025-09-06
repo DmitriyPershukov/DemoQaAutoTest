@@ -15,7 +15,7 @@ namespace task3.test.pages
 
         private Button addButton;
         private int rowCount;
-        
+
         public WebTablesForm() : base(
             new ElementContainer(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
             name)
@@ -23,10 +23,7 @@ namespace task3.test.pages
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");
         }
 
-        public void ClickAddButton()
-        {
-            addButton.Click();
-        }
+        public Button AddButton { get => addButton; }
 
         public User[] GetUsers()
         {
