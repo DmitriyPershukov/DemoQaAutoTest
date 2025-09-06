@@ -37,7 +37,7 @@ namespace task3.Test.Tests
                 "Alerts, Frame & Windows button was clicked and button Alerts was clicked in left menu " +
                 "but Alerts form was not opened.");
 
-            alertsForm.ClickAlertButton();
+            alertsForm.AlertButton.Click();
             Assert.That(AlertUtils.GetAlertText(), Is.EqualTo(testData.AlertText),
                 "'Click Button to see alert' button was clicked " +
                 $"but alert with text '{testData.AlertText}' did not appear.");
@@ -46,7 +46,7 @@ namespace task3.Test.Tests
             Assert.That(!AlertUtils.IsAlertPresent(),
                 "Ok button on alert was clicked but alert is still present.");
 
-            alertsForm.ClickConfirmBoxButton();
+            alertsForm.ConfirmBoxButton.Click();
             Assert.That(AlertUtils.GetAlertText(), Is.EqualTo(testData.ConfirmBoxAlertText),
                 "'On button click, confirm box will appear' button was clicked " +
                 $"but alert with text '{testData.ConfirmBoxAlertText}' did not appear.");
@@ -58,7 +58,7 @@ namespace task3.Test.Tests
                 $"Ok button in confirm box alert was clicked " +
                 $"but '{testData.ConfirmBoxConfirmationText}' did not appear.");
 
-            alertsForm.ClickPromptBoxButton();
+            alertsForm.PrpromptBoxButton.Click();
             Assert.That(AlertUtils.GetAlertText(), Is.EqualTo(testData.PromptBoxAlertText),
                 "'On button click, prompt box will appear' button was clicked " +
                 $"but alert with text '{testData.PromptBoxAlertText}' did not appear.");

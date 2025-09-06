@@ -8,9 +8,9 @@ namespace task3.test.pages
     {
         private const string name = "Alerts Form";
 
-        Button alertButton;
-        Button confirmBoxButton;
-        Button promptBoxButton;
+        private Button alertButton;
+        private Button confirmBoxButton;
+        private Button promptBoxButton;
         
         public AlertsForm() : base(new BareElement(By.Id("javascriptAlertsWrapper"), 
             "AlertsForm identifying element"), 
@@ -23,19 +23,19 @@ namespace task3.test.pages
                 "Prompt box alert");
         }
 
-        public void ClickAlertButton()
+        public Button AlertButton 
         {
-            alertButton.Click();
+            get {return alertButton;}
         }
 
-        public void ClickConfirmBoxButton()
-        {
-            confirmBoxButton.Click();
+        public Button ConfirmBoxButton 
+        { 
+            get {return confirmBoxButton;}
         }
 
-        public void ClickPromptBoxButton()
+        public Button PrpromptBoxButton
         {
-            promptBoxButton.Click();
+            get {return promptBoxButton;}
         }
 
         public string GetConfirmBoxConfirmationText()
