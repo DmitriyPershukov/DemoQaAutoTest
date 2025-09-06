@@ -25,9 +25,6 @@ namespace task3.test.tests.registration_form_add_delete
             userRegistrationForm = new UserRegistrationForm();
         }
 
-        [TearDown]
-        public void Teardown(){}
-
         public static IEnumerable<User> TestCases()
         {
             foreach(var user in testData.Users){

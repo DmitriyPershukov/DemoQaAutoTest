@@ -24,10 +24,6 @@ namespace task3.test.tests.iframe_has_correct_text
             testData = TestDataManager.GetTestDataModel<IframeHasCorrectTextTestData>();
         }
 
-        [TearDown]
-        public void Teardown()
-        {}
-
         [Test]
         public void IframeHasCorrectTextTest()
         {

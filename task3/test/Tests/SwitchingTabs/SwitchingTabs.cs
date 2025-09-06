@@ -24,10 +24,6 @@ namespace task3.test.tests.switching_tabs
             linksForm = new LinksForm();
         }
 
-        [TearDown]
-        public void Teardown()
-        {}
-
         [Test]
         public void SwitchingTabsTest()
         {

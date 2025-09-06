@@ -24,10 +24,6 @@ namespace task3.test.tests.button_displays_correct_alert
             testData = TestDataManager.GetTestDataModel<ButtonDisplaysCorrectAlertTestData>();
         }
 
-        [TearDown]
-        public void Teardown()
-        {}
-
         [Test]
         public void ButtonDisplaysCorrectAlertTest()
         {
