@@ -30,7 +30,7 @@ namespace task3.test.tests.button_displays_correct_alert
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
-            mainPage.ClickAlertsWindowsButton();
+            mainPage.AlertsWindowsButton.Click();
             playgroundPage.ClickAccordionMenuElement("Alerts", "Alerts");
             Assert.That(playgroundPage.IsOpened() && alertsForm.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button Alerts was clicked in left menu " +

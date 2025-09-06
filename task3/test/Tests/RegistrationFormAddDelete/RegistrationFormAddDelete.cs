@@ -38,7 +38,7 @@ namespace task3.test.tests.registration_form_add_delete
             WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
-            mainPage.ClickElementsButton();
+            mainPage.ElementsButton.Click();
             playgroundPage.ClickAccordionMenuElement("Elements", "Web Tables");
             Assert.That(playgroundPage.IsOpened() && webTables.IsOpened(),
                 "Alerts, Frame & Windows button was clicked and button 'Web Tables' was clicked in left menu " +
