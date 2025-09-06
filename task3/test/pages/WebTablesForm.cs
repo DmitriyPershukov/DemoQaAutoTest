@@ -5,6 +5,7 @@ using task3.framework.page;
 using task3.framework.web_driver;
 using task3.Framework.ElementObjects;
 using task3.Framework.Logging;
+using task3.Test.Models;
 using task3.Test.TestDataModels;
 
 namespace task3.test.pages
