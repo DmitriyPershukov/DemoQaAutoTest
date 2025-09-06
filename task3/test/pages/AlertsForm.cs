@@ -14,7 +14,7 @@ namespace task3.test.pages
         private Button confirmBoxButton;
         private Button promptBoxButton;
         private TextBox confirmBoxConfirmationText;
-        TextBox promptBoxConfirmationText;
+        private TextBox promptBoxConfirmationText;
 
         public AlertsForm() : base(new ElementContainer(By.Id("javascriptAlertsWrapper"),
             "AlertsForm identifying element"), name)
