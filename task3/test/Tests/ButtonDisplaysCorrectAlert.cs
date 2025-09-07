@@ -28,7 +28,7 @@ namespace task3.Test.Tests
         [Test]
         public void ButtonDisplaysCorrectAlertTest()
         {
-            WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
+            GoToMainPageUrl();
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
             mainPage.ClickAlertsWindowsButton();

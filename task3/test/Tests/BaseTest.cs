@@ -36,5 +36,10 @@ namespace task3.framework.test
         {
             LoggingManager.GetLogger().Info($"Ended test: {GetType().Name}");
         }
+
+        protected void GoToMainPageUrl()
+        {
+            WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
+        }
     }
 }

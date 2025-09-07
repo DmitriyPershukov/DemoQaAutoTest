@@ -27,7 +27,7 @@ namespace task3.Test.Tests
         [Test]
         public void SwitchingTabsTest()
         {
-            WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
+            GoToMainPageUrl();
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
             mainPage.ClickAlertsWindowsButton();

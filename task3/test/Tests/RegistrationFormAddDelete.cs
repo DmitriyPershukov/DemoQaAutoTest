@@ -37,7 +37,7 @@ namespace task3.Test.Tests
         [TestCaseSource(nameof(TestCases))]
         public void RegistrationFormAddDeleteTest(User user)
         {
-            WebDriverProvider.GetInstance().Navigate().GoToUrl(globalTestData.MainPageURL);
+            GoToMainPageUrl();
             Assert.That(mainPage.IsOpened(), "After navigating to main page it was not opened.");
 
             mainPage.ClickElementsButton();
