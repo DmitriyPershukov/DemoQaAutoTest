@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using System.Collections.Generic;
 using task3.framework.test;
-using task3.framework.web_driver;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
 using task3.Test.TestDataModels;

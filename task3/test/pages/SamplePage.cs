@@ -8,7 +8,6 @@ namespace task3.test.pages
     {
         private const string name = "Sample Page";
         public SamplePage() : base(
-            new TextBox(By.Id("sampleHeading"), "SamplePage identifying element"), name)
-        {}
+            new TextBox(By.Id("sampleHeading"), "SamplePage identifying element"), name){}
     }
 }

@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using task3.framework.test;
 using task3.framework.testing_utils;
-using task3.framework.web_driver;
 using task3.Framework.Utils.BrowserUtils;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
@@ -52,7 +51,7 @@ namespace task3.Test.Tests
                 $"but alert with text '{testData.ConfirmBoxAlertText}' did not appear.");
 
             AlertUtils.ClickOk();
-            Assert.That(!AlertUtils.IsAlertPresent(), 
+            Assert.That(!AlertUtils.IsAlertPresent(),
                 "Ok button in confirm box alert was clicked but alert was not closed.");
             Assert.That(alertsForm.GetConfirmBoxConfirmationText(), Is.EqualTo(testData.ConfirmBoxConfirmationText),
                 $"Ok button in confirm box alert was clicked " +

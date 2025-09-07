@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using task3.framework.test;
-using task3.framework.web_driver;
 using task3.Framework.Utils.BrowserUtils;
 using task3.test.pages;
 
@@ -39,20 +38,21 @@ namespace task3.Test.Tests
             browserWindowsForm.ClickNewTabButton();
             WindowsUtils.SwitchToNewWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 2,
-                "New tab buttons was clicked but new tab was not opened.");
-            Assert.That(samplePage.IsOpened(), 
-                "New tab buttons was clicked but sample page did not open");
+                "New tab button was clicked but new tab was not opened.");
+            samplePage.WaitToLoad(TimeSpan.FromSeconds(2));
+            Assert.That(samplePage.IsOpened(),
+                "New tab button was clicked but sample page did not open");
 
             WindowsUtils.CloseCurrentWindow();
             WindowsUtils.SwitchToPreviousWindow();
             Assert.That(WindowsUtils.GetWindowCount() == 1,
                 "Tab close was pressed but tab did not close.");
-            Assert.That(browserWindowsForm.IsOpened(), 
+            Assert.That(browserWindowsForm.IsOpened(),
                 "Tab was closed but browser windows form was not opened");
 
             playgroundPage.ClickDropDownMenuHeader("Elements");
             playgroundPage.ClickAccordionMenuElement("Elements", "Links");
-            Assert.That(linksForm.IsOpened(), 
+            Assert.That(linksForm.IsOpened(),
                 "Links button in left side menu was clicked but links form did not open.");
 
             linksForm.ClickHomeLink();
@@ -64,7 +64,7 @@ namespace task3.Test.Tests
                 "Home link was clicked but main page was not opened.");
 
             WindowsUtils.SwitchToPreviousWindow();
-            Assert.That(linksForm.IsOpened(), 
+            Assert.That(linksForm.IsOpened(),
                 "Switched to a previous tab but links form was not opened.");
         }
     }

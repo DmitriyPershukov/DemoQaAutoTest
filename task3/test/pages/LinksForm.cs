@@ -10,7 +10,7 @@ namespace task3.test.pages
         private const string name = "Links Form";
 
         private Button homeLink;
-        
+
         public LinksForm() : base(
             new ElementContainer(By.Id("linkWrapper"), "LinksForm identifying element"), name)
         {

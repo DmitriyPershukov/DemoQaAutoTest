@@ -10,7 +10,7 @@ namespace task3.test.pages
         private const string name = "Frames Form";
         public FramesForm() : base(
             new TextBox(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Frames')]"),
-            "FramesForm identifying element"), 
+            "FramesForm identifying element"),
             name){}
 
         public string GetTopIframeText()

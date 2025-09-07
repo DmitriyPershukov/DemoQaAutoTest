@@ -3,7 +3,6 @@ using task3.framework.element_utils;
 using task3.framework.page;
 using task3.Framework.ElementObjects;
 using task3.Test.Models;
-using task3.Test.TestDataModels;
 
 namespace task3.test.pages
 {
@@ -18,7 +17,7 @@ namespace task3.test.pages
         private InputField salaryField;
         private InputField departmentField;
         private Button submitButton;
-        
+
         public UserRegistrationForm() : base(
             new ElementContainer(By.Id("userForm"), "UserREgistrationForm identifying element"), name)
         {

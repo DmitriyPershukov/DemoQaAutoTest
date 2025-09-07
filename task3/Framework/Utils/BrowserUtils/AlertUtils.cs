@@ -12,7 +12,7 @@ namespace task3.Framework.Utils.BrowserUtils
                 .GetInstance()
                 .SwitchTo()
                 .Alert()
-                .Text;     
+                .Text;
         }
 
         public static void ClickOk()

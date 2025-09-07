@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System.ComponentModel;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.Framework.ElementObjects;
@@ -20,7 +19,7 @@ namespace task3.test.pages
             "AlertsForm identifying element"), name)
         {
             alertButton = new Button(By.Id("alertButton"), "Alert");
-            confirmBoxButton = new Button(By.Id("confirmButton"), 
+            confirmBoxButton = new Button(By.Id("confirmButton"),
                 "Confirm box alert");
             promptBoxButton = new Button(By.Id("promtButton"),
                 "Prompt box alert");

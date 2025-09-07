@@ -7,7 +7,7 @@ using task3.Test.TestDataModels;
 namespace task3.framework.test
 {
     [TestFixture]
-    abstract public class BaseTest
+    public abstract class BaseTest
     {
         protected GlobalTestData globalTestData;
 
@@ -17,7 +17,7 @@ namespace task3.framework.test
         {
             LogTestStart();
             globalTestData = TestDataManager.GetTestDataModel<GlobalTestData>();
-            
+
         }
 
         [TearDown]

@@ -13,6 +13,6 @@ namespace task3.test.elements
                 By.XPath($"//*[contains(text(), '{menuLabel}')]" +
                 $"//ancestor::*[contains(@class, 'element-group')]" +
                 $"//*[contains(@class, 'element-list')]" +
-                $"//*[contains(text(),'{label}')]/.."), name) { }
+                $"//*[contains(text(),'{label}')]/.."), name){}
     }
 }

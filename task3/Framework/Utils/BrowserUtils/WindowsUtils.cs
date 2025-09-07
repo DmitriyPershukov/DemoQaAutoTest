@@ -14,8 +14,6 @@ namespace task3.Framework.Utils.BrowserUtils
 
         public static void SwitchToNewWindow()
         {
-            LoggingManager.GetLogger().Debug($"current window handles: {GetWindowHandles()}");
-            LoggingManager.GetLogger().Debug($"current window handle: {currentWindow}");
             LoggingManager.GetLogger().Info("Switching to a new window or tab.");
             currentWindow++;
             SwitchToCurrentWindow();

@@ -12,8 +12,9 @@ namespace task3.test.pages
         private const string name = "Nested Frames Form";
         public NestedFramesForm() : base(
             new TextBox(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Nested Frames')]"),
-                "NestedFramesForm identifying element"), 
-            name){}
+                "NestedFramesForm identifying element"),
+            name)
+        { }
 
         public string[] GetNestedIframesText()
         {

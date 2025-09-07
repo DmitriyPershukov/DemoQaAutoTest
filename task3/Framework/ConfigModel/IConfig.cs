@@ -2,6 +2,6 @@
 {
     public interface IConfig
     {
-        virtual static string GetConfigFilePath() { throw new NotImplementedException(); }
+        public virtual static string GetConfigFilePath() { throw new NotImplementedException(); }
     }
 }

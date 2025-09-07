@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using task3.framework.element_utils;
 using task3.framework.page;
 using task3.Framework.ElementObjects;
 using task3.test.elements;
@@ -11,10 +10,10 @@ namespace task3.test.pages
         private const string name = "Playground Page";
 
         private Accordion accordion;
-        
-        public PlaygroundPage() : 
-            base(new ElementContainer(By.XPath("//*[contains(@class, 'playgound-body')]"), 
-                "Playground page identifying element"), 
+
+        public PlaygroundPage() :
+            base(new ElementContainer(By.XPath("//*[contains(@class, 'playgound-body')]"),
+                "Playground page identifying element"),
                 name)
         {
             accordion = new Accordion($"Accordion element of page: {name}");

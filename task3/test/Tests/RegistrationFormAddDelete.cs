@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using task3.framework.test;
-using task3.framework.web_driver;
 using task3.Framework.Utils.ConfigUtils;
 using task3.test.pages;
 using task3.Test.Models;
@@ -15,7 +14,7 @@ namespace task3.Test.Tests
         PlaygroundPage playgroundPage;
         WebTablesForm webTables;
         UserRegistrationForm userRegistrationForm;
-        static RegistrationFormAddDeleteTestData testData = 
+        static RegistrationFormAddDeleteTestData testData =
             TestDataManager.GetTestDataModel<RegistrationFormAddDeleteTestData>();
 
         [SetUp]
@@ -29,7 +28,8 @@ namespace task3.Test.Tests
 
         public static IEnumerable<User> TestCases()
         {
-            foreach(var user in testData.Users){
+            foreach (var user in testData.Users)
+            {
                 yield return user;
             }
         }
@@ -47,7 +47,7 @@ namespace task3.Test.Tests
                 "but Web Tables form was not opened.");
 
             webTables.ClickAddButton();
-            Assert.That(userRegistrationForm.IsOpened(), 
+            Assert.That(userRegistrationForm.IsOpened(),
                 "Add button was clicked but user registration form was not opened.");
 
             userRegistrationForm.EnterUserData(user);
@@ -58,7 +58,7 @@ namespace task3.Test.Tests
 
             webTables.RefreshRowCount();
             webTables.DeleteUser(user);
-            Assert.That(webTables.RowCountChanged(), 
+            Assert.That(webTables.RowCountChanged(),
                 $"Delete button was pressed in user {user} row but row count was not changed.");
             usersInTable = webTables.GetUsers();
             Assert.That(!usersInTable.Contains(user),

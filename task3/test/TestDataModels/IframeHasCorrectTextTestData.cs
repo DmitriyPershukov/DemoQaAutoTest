@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using task3.Framework.ConfigModel;
+﻿using task3.Framework.ConfigModel;
 
 namespace task3.Test.TestDataModels
 {

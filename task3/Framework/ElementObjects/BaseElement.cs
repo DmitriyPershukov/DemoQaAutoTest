@@ -8,7 +8,8 @@ namespace task3.framework.element_utils
     {
         private readonly By locator;
         private readonly string name;
-        public BaseElement(By locator, string name) {
+        public BaseElement(By locator, string name)
+        {
             this.locator = locator;
             this.name = name;
         }

@@ -7,7 +7,8 @@ namespace task3.test.elements
     {
         private Dictionary<string, MenuElement> elements;
         private string label;
-        public MenuElementList(By locator, string name) : base(locator, name) {
+        public MenuElementList(By locator, string name) : base(locator, name)
+        {
             elements = new Dictionary<string, MenuElement>();
         }
 
@@ -27,8 +28,8 @@ namespace task3.test.elements
         {
             if (!elements.ContainsKey(elementLabel))
             {
-                elements.Add(elementLabel, 
-                    new MenuElement(this.label, 
+                elements.Add(elementLabel,
+                    new MenuElement(this.label,
                     elementLabel, $"Element '{elementLabel}' of menu list '{this.label}'"));
             }
             return elements[elementLabel];

@@ -6,7 +6,6 @@ using task3.framework.web_driver;
 using task3.Framework.ElementObjects;
 using task3.Framework.Logging;
 using task3.Test.Models;
-using task3.Test.TestDataModels;
 
 namespace task3.test.pages
 {
@@ -18,7 +17,7 @@ namespace task3.test.pages
         private int rowCount;
 
         public WebTablesForm() : base(
-            new ElementContainer(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"), 
+            new ElementContainer(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"),
             name)
         {
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");
@@ -37,7 +36,7 @@ namespace task3.test.pages
             var rows = WebDriverProvider.GetInstance()
                 .FindElements(By.XPath("//*[contains(@class, 'rt-tbody')]" +
                 "//*[@role='row' and not(contains(@class, '-padRow'))]"));
-            foreach (var row in rows) 
+            foreach (var row in rows)
             {
                 WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
                 string[] cellsText = new string[6];
@@ -49,7 +48,7 @@ namespace task3.test.pages
                             .FindElements(By.XPath(".//*[@role='gridcell']"))
                             .Select(cell => cell.Text)
                             .ToArray();
-                        foreach (var text in cellsText) 
+                        foreach (var text in cellsText)
                         {
                             if (String.IsNullOrWhiteSpace(text))
                             {
@@ -71,8 +70,8 @@ namespace task3.test.pages
         public void WaitNewRowAppear(TimeSpan timeout)
         {
             WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
-            wait.Until(d => 
-            { 
+            wait.Until(d =>
+            {
                 if (RowCountChanged())
                 {
                     rowCount = GetRowCount();
@@ -131,7 +130,7 @@ namespace task3.test.pages
                 catch (Exception ex)
                 {
                 }
-                if(new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
+                if (new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
                         cellsText[3], Int32.Parse(cellsText[4]), cellsText[5]).Equals(user))
                 {
                     LoggingManager.GetLogger().Debug($"Deleting user: {user}");

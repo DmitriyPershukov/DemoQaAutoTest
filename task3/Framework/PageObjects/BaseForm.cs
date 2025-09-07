@@ -6,8 +6,8 @@ namespace task3.framework.page
     {
         private BaseElement identifyingElement;
         private string name;
-        public BaseForm(BaseElement identifyingElement, string name) 
-        { 
+        public BaseForm(BaseElement identifyingElement, string name)
+        {
             this.identifyingElement = identifyingElement;
             this.name = name;
         }

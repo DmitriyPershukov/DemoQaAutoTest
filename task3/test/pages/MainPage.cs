@@ -11,8 +11,8 @@ namespace task3.test.pages
 
         private Button alertsWindowsButton;
         private Button elementsButton;
-        
-        public MainPage() : base(new ElementContainer(By.XPath("//*[contains(@class, 'home-content')]"), 
+
+        public MainPage() : base(new ElementContainer(By.XPath("//*[contains(@class, 'home-content')]"),
             "Main page identifying element"), name)
         {
             alertsWindowsButton = new Button(

@@ -10,7 +10,7 @@ namespace task3.test.pages
         private const string name = "Browser Windows Form";
 
         private Button newTabButton;
-        
+
         public BrowserWindowsForm() : base(
             new ElementContainer(By.Id("browserWindows"), "BrowserWindowsForm identifying element"), name)
         {
