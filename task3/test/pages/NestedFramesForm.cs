@@ -13,38 +13,27 @@ namespace task3.test.pages
         public NestedFramesForm() : base(
             new TextBox(By.XPath("//*[@id='framesWrapper']//*[contains(text(), 'Nested Frames')]"),
                 "NestedFramesForm identifying element"), 
-            name)
-        {
-        }
+            name){}
 
-        private bool IsTextPresentOnPage(string text)
-        {
-            return new TextBox(By.XPath($"//*[contains(text(), '{text}')]"), "").IsPresent();
-        }
-
-        public bool AreStringsPresent(string[] strings)
+        public string[] GetNestedIframesText()
         {
             WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
-            List<string> stringsToCheck = new List<string>(strings);
-            foreach (string s in stringsToCheck)
-            {
-                bool parentIframeHasText = false;
-                bool childIframeHasText = false;
-                IframeUtils.SwitchToFirstIframe();
-                TextBox iframeElement = new TextBox(By.XPath("//iframe"), "iframe body");
-                wait.Until(d => iframeElement.IsPresent());
-                parentIframeHasText = IsTextPresentOnPage(s);   
-                IframeUtils.SwitchToFirstIframe();
-                iframeElement = new TextBox(By.XPath("//p"), "iframe body");
-                wait.Until(d => iframeElement.IsPresent());
-                childIframeHasText = IsTextPresentOnPage(s);
-                IframeUtils.SwitchToDefaultContent();
-                if ((parentIframeHasText || childIframeHasText).Equals(false))
-                {
-                    return false;
-                }
-            }
-            return true;
+            string[] iframesText = new string[2];
+            IframeUtils.SwitchToFirstIframe();
+            TextBox iframeElement = new TextBox(By.XPath("//iframe"), "iframe body");
+            wait.Until(d => iframeElement.IsPresent());
+            iframesText[0] = GetIframeText();
+            IframeUtils.SwitchToFirstIframe();
+            iframeElement = new TextBox(By.XPath("//p"), "iframe body");
+            wait.Until(d => iframeElement.IsPresent());
+            iframesText[1] = GetIframeText();
+            IframeUtils.SwitchToDefaultContent();
+            return iframesText;
+        }
+
+        private string GetIframeText()
+        {
+            return WebDriverProvider.GetInstance().FindElement(By.XPath("//body")).Text;
         }
     }
 }

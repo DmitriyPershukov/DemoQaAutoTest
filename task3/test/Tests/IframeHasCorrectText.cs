@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using System.Collections.Generic;
 using task3.framework.test;
 using task3.framework.web_driver;
 using task3.Framework.Utils.ConfigUtils;
@@ -37,8 +39,10 @@ namespace task3.Test.Tests
                 "Alerts, Frame & Windows button was clicked and button 'Nested Frames' was clicked in left menu " +
                 "but Nested Frames form was not opened.");
 
-            Assert.That(nestedFramesForm.AreStringsPresent(testData.NestedFramesRequiredText), 
-                "Nested frames form should contain ");
+            Assert.That(new HashSet<string>(nestedFramesForm.GetNestedIframesText())
+                .SetEquals(testData.NestedFramesRequiredText),
+                $"Nested frames form should contain following text: " +
+                $"'{testData.NestedFramesRequiredText[0]}', '{testData.NestedFramesRequiredText[1]}'.");
 
             playgroundPage.ClickAccordionMenuElement("Alerts", "Frames");
             Assert.That(playgroundPage.IsOpened() && framesForm.IsOpened(),
