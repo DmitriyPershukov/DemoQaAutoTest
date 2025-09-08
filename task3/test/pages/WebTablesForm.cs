@@ -1,10 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Reflection.Metadata;
 using task3.framework.element_utils;
 using task3.framework.page;
 using task3.framework.web_driver;
 using task3.Framework.ElementObjects;
 using task3.Framework.Logging;
+using task3.Test.Elements;
 using task3.Test.Models;
 
 namespace task3.test.pages
@@ -15,70 +17,23 @@ namespace task3.test.pages
 
         private Button addButton;
         private int rowCount;
+        private Table table;
 
         public WebTablesForm() : base(
             new ElementContainer(By.XPath("//*[contains(@class, 'rt-table')]"), "WebTables Page identifying element"),
             name)
         {
             addButton = new Button(By.Id("addNewRecordButton"), "Add new record");
+            table = new Table("Table");
         }
 
         private Button AddButton { get => addButton; }
 
+        private Table Table { get => table; }
+
         public void ClickAddButton()
         {
             AddButton.Click();
-        }
-
-        public User[] GetUsers()
-        {
-            List<User> users = new List<User>();
-            var rows = WebDriverProvider.GetInstance()
-                .FindElements(By.XPath("//*[contains(@class, 'rt-tbody')]" +
-                "//*[@role='row' and not(contains(@class, '-padRow'))]"));
-            foreach (var row in rows)
-            {
-                WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
-                string[] cellsText = new string[6];
-                try
-                {
-                    wait.Until(d =>
-                    {
-                        cellsText = row
-                            .FindElements(By.XPath(".//*[@role='gridcell']"))
-                            .Select(cell => cell.Text)
-                            .ToArray();
-                        foreach (var text in cellsText)
-                        {
-                            if (String.IsNullOrWhiteSpace(text))
-                            {
-                                return false;
-                            }
-                        }
-                        return true;
-                    });
-                }
-                catch (Exception ex)
-                {
-                }
-                users.Add(new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
-                        cellsText[3], Int32.Parse(cellsText[4]), cellsText[5]));
-            }
-            return users.ToArray();
-        }
-
-        public void WaitNewRowAppear(TimeSpan timeout)
-        {
-            WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
-            wait.Until(d =>
-            {
-                if (RowCountChanged())
-                {
-                    rowCount = GetRowCount();
-                    return true;
-                }
-                return false;
-            });
         }
 
         public bool RowCountChanged()
@@ -102,42 +57,12 @@ namespace task3.test.pages
 
         public void DeleteUser(User user)
         {
-            var rows = WebDriverProvider.GetInstance()
-                .FindElements(By.XPath("//*[contains(@class, 'rt-tbody')]" +
-                "//*[@role='row' and not(contains(@class, '-padRow'))]"));
-            foreach (var row in rows)
-            {
-                WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), TimeSpan.FromSeconds(2));
-                string[] cellsText = new string[6];
-                try
-                {
-                    wait.Until(d =>
-                    {
-                        cellsText = row
-                            .FindElements(By.XPath(".//*[@role='gridcell']"))
-                            .Select(cell => cell.Text)
-                            .ToArray();
-                        foreach (var text in cellsText)
-                        {
-                            if (String.IsNullOrWhiteSpace(text))
-                            {
-                                return false;
-                            }
-                        }
-                        return true;
-                    });
-                }
-                catch (Exception ex)
-                {
-                }
-                if (new User(cellsText[0], cellsText[1], Int32.Parse(cellsText[2]),
-                        cellsText[3], Int32.Parse(cellsText[4]), cellsText[5]).Equals(user))
-                {
-                    LoggingManager.GetLogger().Debug($"Deleting user: {user}");
-                    row.FindElement(By.XPath(".//*[contains(@id, 'delete-record')]")).Click();
-                    break;
-                }
-            }
+            Table.DeleteUser(user);
+        }
+
+        public User[] GetUsers()
+        {
+            return Table.GetRows().Select(r => r.GetUser()).ToArray();
         }
     }
 }
