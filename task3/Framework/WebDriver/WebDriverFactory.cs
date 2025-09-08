@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using task3.Framework.Utils.ConfigUtils;
+using task3.Framework.DataManagers;
 
 namespace task3.framework.web_driver
 {

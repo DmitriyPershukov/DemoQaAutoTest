@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using task3.framework.test;
-using task3.Framework.Utils.ConfigUtils;
+using task3.Framework.DataManagers;
 using task3.test.pages;
 using task3.Test.TestDataModels;
 

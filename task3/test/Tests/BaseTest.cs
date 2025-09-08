@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using task3.framework.web_driver;
+using task3.Framework.DataManagers;
 using task3.Framework.Logging;
-using task3.Framework.Utils.ConfigUtils;
 using task3.Test.TestDataModels;
 
 namespace task3.framework.test

@@ -1,7 +1,8 @@
 ﻿using task3.Framework.ConfigModel;
 using task3.Framework.Logging;
+using task3.Framework.Utils;
 
-namespace task3.Framework.Utils.ConfigUtils
+namespace task3.Framework.DataManagers
 {
     public class ConfigManager
     {
