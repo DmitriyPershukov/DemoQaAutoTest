@@ -13,8 +13,6 @@
 
 task2/
 
-*Program.cs
-
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
