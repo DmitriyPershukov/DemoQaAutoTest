@@ -37,11 +37,6 @@ namespace task3.framework.element_utils
 
         protected By Locator { get { return locator; } }
 
-        public string GetText()
-        {
-            return GetElement().Text;
-        }
-
         public void WaitUntilPresent(TimeSpan timeout)
         {
             WebDriverWait wait = new WebDriverWait(WebDriverProvider.GetInstance(), timeout);
