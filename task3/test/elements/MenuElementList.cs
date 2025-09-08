@@ -30,7 +30,7 @@ namespace task3.test.elements
             {
                 elements.Add(elementLabel,
                     new MenuElement(this.label,
-                    elementLabel, $"Element '{elementLabel}' of menu list '{this.label}'"));
+                    elementLabel, $"item '{elementLabel}' of menu '{this.label}'"));
             }
             return elements[elementLabel];
         }

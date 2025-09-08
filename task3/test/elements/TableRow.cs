@@ -18,7 +18,7 @@ namespace task3.Test.Elements
         {
             deleteButton = new Button(
                 By.XPath($"{Locator.Criteria}//*[contains(@id, 'delete-record')]"), 
-                $"{name} delete button");
+                $"{name} delete");
         }
 
         private Button DeleteButton { get { return deleteButton; } }
