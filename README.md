@@ -1,4 +1,4 @@
-﻿# d.pershukov
+﻿# Автоматические тесты для сайта https://demoqa.com/
 
 Требуемый SDK:
 .NET 9.0
